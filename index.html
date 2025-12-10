@@ -21,67 +21,66 @@
     }
 
     body {
-  margin: 0;
-  padding: 32px 16px 48px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 32px 16px 48px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
 
-  /* Fondo B – textura radial elegante */
-  background:
-    radial-gradient(circle at 20% 20%, rgba(150, 170, 255, 0.12), transparent 60%),
-    radial-gradient(circle at 80% 80%, rgba(100, 130, 255, 0.10), transparent 60%),
-    #f5f7ff;
+      /* Fondo B con gradientes suaves */
+      background:
+        radial-gradient(circle at 20% 20%, rgba(150, 170, 255, 0.12), transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(100, 130, 255, 0.10), transparent 60%),
+        #f5f7ff;
 
-  color: var(--text);
-}
+      /* Animación muy suave del fondo */
+      animation: bgPulse 22s ease-in-out infinite;
+    }
+
     @keyframes bgPulse {
-  0% {
-    background:
-      radial-gradient(circle at 20% 20%, rgba(150, 170, 255, 0.12), transparent 60%),
-      radial-gradient(circle at 80% 80%, rgba(100, 130, 255, 0.10), transparent 60%),
-      #f5f7ff;
-  }
-  50% {
-    background:
-      radial-gradient(circle at 22% 22%, rgba(150, 170, 255, 0.15), transparent 62%),
-      radial-gradient(circle at 78% 78%, rgba(100, 130, 255, 0.12), transparent 62%),
-      #f5f7ff;
-  }
-  100% {
-    background:
-      radial-gradient(circle at 20% 20%, rgba(150, 170, 255, 0.12), transparent 60%),
-      radial-gradient(circle at 80% 80%, rgba(100, 130, 255, 0.10), transparent 60%),
-      #f5f7ff;
-  }
-}
-
-body {
-  animation: bgPulse 18s ease-in-out infinite;
-}
-
+      0% {
+        background:
+          radial-gradient(circle at 20% 20%, rgba(150, 170, 255, 0.12), transparent 60%),
+          radial-gradient(circle at 80% 80%, rgba(100, 130, 255, 0.10), transparent 60%),
+          #f5f7ff;
+      }
+      50% {
+        background:
+          radial-gradient(circle at 22% 22%, rgba(150, 170, 255, 0.16), transparent 63%),
+          radial-gradient(circle at 78% 78%, rgba(100, 130, 255, 0.13), transparent 63%),
+          #f5f7ff;
+      }
+      100% {
+        background:
+          radial-gradient(circle at 20% 20%, rgba(150, 170, 255, 0.12), transparent 60%),
+          radial-gradient(circle at 80% 80%, rgba(100, 130, 255, 0.10), transparent 60%),
+          #f5f7ff;
+      }
+    }
 
     .page {
       max-width: 1100px;
       margin: 0 auto;
     }
 
-    /* HEADER: YA NO ES TARJETA */
+    /* HEADER centrado, sin tarjeta */
     .header-card {
       padding: 0 4px 8px;
-      margin-bottom: 16px;
+      margin: 0 auto 16px;
+      text-align: center;
       animation: fadeUp 0.5s ease-out forwards;
       opacity: 0;
       transform: translateY(16px);
     }
 
     .title {
-      font-size: 2rem;
-      margin: 0 0 4px;
+      font-size: 2.4rem;
+      margin: 0 0 6px;
     }
 
     .subtitle {
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: var(--muted);
-      margin: 0 0 12px;
+      margin: 0 0 14px;
     }
 
     .meta {
@@ -90,6 +89,8 @@ body {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      justify-content: center;
+      margin-bottom: 8px;
     }
 
     .meta span::before {
@@ -106,10 +107,11 @@ body {
     }
 
     .pill-row {
-      margin-top: 12px;
+      margin-top: 10px;
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      justify-content: center;
     }
 
     .pill {
@@ -121,10 +123,12 @@ body {
       color: var(--muted);
     }
 
-    /* ABOUT: YA NO ES TARJETA */
+    /* ABOUT centrado, sin tarjeta */
     .about-section {
       padding: 8px 4px 12px;
-      margin-bottom: 20px;
+      margin: 0 auto 20px;
+      max-width: 850px;
+      text-align: center;
       animation: fadeUp 0.6s ease-out forwards;
       opacity: 0;
       transform: translateY(18px);
@@ -139,7 +143,7 @@ body {
     }
 
     .section-title {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       margin: 0 0 10px;
     }
 
@@ -161,10 +165,10 @@ body {
       transform: translateY(18px);
       animation: fadeUp 0.6s ease-out forwards;
       transition:
-        transform 0.2s ease-out,
-        box-shadow 0.2s ease-out,
-        border-color 0.2s ease-out,
-        background 0.2s ease-out;
+        transform 0.25s ease-out,
+        box-shadow 0.25s ease-out,
+        border-color 0.25s ease-out,
+        background 0.25s ease-out;
     }
 
     .module:hover {
@@ -183,7 +187,7 @@ body {
       text-transform: uppercase;
       letter-spacing: 0.08em;
       text-align: center;
-      font-weight: 700; /* NEGRITA */
+      font-weight: 700;
     }
 
     .project-grid-top {
@@ -225,17 +229,18 @@ body {
       cursor: default;
       opacity: 0;
       transform: translateY(18px);
-      animation: fadeUp 0.6s ease-out forwards;
+      animation: fadeUp 0.7s ease-out forwards;
       transition:
-        transform 0.32s ease,
-        box-shadow 0.32s ease,
-        border-color 0.32s ease,
-        background 0.32s ease,
-        z-index 0.2s ease;
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        border-color 0.45s ease,
+        background 0.45s ease,
+        z-index 0.3s ease;
       text-align: center;
       transform-origin: center center;
     }
 
+    /* HOVER expansivo más lento y suave */
     .project-card:hover {
       transform: translateY(-6px) scale(1.10);
       box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
@@ -280,9 +285,9 @@ body {
       opacity: 0;
       overflow: hidden;
       transition:
-        max-height 0.4s ease,
-        opacity 0.35s ease,
-        margin-top 0.3s ease;
+        max-height 0.5s ease,
+        opacity 0.4s ease,
+        margin-top 0.35s ease;
       margin-top: 0;
     }
 
@@ -300,14 +305,14 @@ body {
     }
 
     .project-card:nth-of-type(1) { animation-delay: 0.12s; }
-    .project-card:nth-of-type(2) { animation-delay: 0.18s; }
-    .project-card:nth-of-type(3) { animation-delay: 0.24s; }
-    .project-card:nth-of-type(4) { animation-delay: 0.30s; }
-    .project-card:nth-of-type(5) { animation-delay: 0.36s; }
-    .project-card:nth-of-type(6) { animation-delay: 0.42s; }
-    .project-card:nth-of-type(7) { animation-delay: 0.48s; }
-    .project-card:nth-of-type(8) { animation-delay: 0.54s; }
-    .project-card:nth-of-type(9) { animation-delay: 0.60s; }
+    .project-card:nth-of-type(2) { animation-delay: 0.20s; }
+    .project-card:nth-of-type(3) { animation-delay: 0.28s; }
+    .project-card:nth-of-type(4) { animation-delay: 0.36s; }
+    .project-card:nth-of-type(5) { animation-delay: 0.44s; }
+    .project-card:nth-of-type(6) { animation-delay: 0.52s; }
+    .project-card:nth-of-type(7) { animation-delay: 0.60s; }
+    .project-card:nth-of-type(8) { animation-delay: 0.68s; }
+    .project-card:nth-of-type(9) { animation-delay: 0.76s; }
 
     /* BOTTOM GRID FOR SKILLS & CONTACT */
 
@@ -349,7 +354,7 @@ body {
 </head>
 <body>
   <main class="page">
-    <!-- HEADER (SIN TARJETA) -->
+    <!-- HEADER centrado -->
     <header class="header-card">
       <h1 class="title">Jean Paul Angulo</h1>
       <p class="subtitle">Project Manager · Operational Excellence · Streaming Operations</p>
@@ -369,7 +374,7 @@ body {
       </div>
     </header>
 
-    <!-- ABOUT (SIN TARJETA) -->
+    <!-- ABOUT centrado -->
     <section class="about-section">
       <p class="section-label">About</p>
       <h2 class="section-title">About Me</h2>
