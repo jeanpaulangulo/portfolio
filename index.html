@@ -33,20 +33,17 @@
       margin: 0 auto;
     }
 
+    /* HEADER: YA NO ES TARJETA */
     .header-card {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-soft);
-      padding: 28px 28px 20px;
-      margin-bottom: 20px;
-      border: 1px solid var(--border);
+      padding: 0 4px 8px;
+      margin-bottom: 16px;
       animation: fadeUp 0.5s ease-out forwards;
       opacity: 0;
       transform: translateY(16px);
     }
 
     .title {
-      font-size: 1.9rem;
+      font-size: 2rem;
       margin: 0 0 4px;
     }
 
@@ -93,6 +90,35 @@
       color: var(--muted);
     }
 
+    /* ABOUT: YA NO ES TARJETA */
+    .about-section {
+      padding: 8px 4px 12px;
+      margin-bottom: 20px;
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 0 0 6px;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      margin: 0 0 10px;
+    }
+
+    .small {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* TARJETAS GENERALES (Skills, Docs, etc.) */
+
     .module {
       background: var(--card-bg);
       border-radius: var(--radius);
@@ -117,24 +143,6 @@
       background: #fcfdff;
     }
 
-    .section-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      margin: 0 0 6px;
-    }
-
-    .section-title {
-      font-size: 1.1rem;
-      margin: 0 0 10px;
-    }
-
-    .small {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
     /* PROJECT GRIDS */
 
     .section-heading {
@@ -143,6 +151,8 @@
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.08em;
+      text-align: center;
+      font-weight: 700; /* NEGRITA */
     }
 
     .project-grid-top {
@@ -150,7 +160,7 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
       margin-bottom: 26px;
-      overflow: visible; /* permitir que el hover sobresalga a los lados */
+      overflow: visible;
     }
 
     .project-grid-more {
@@ -192,10 +202,9 @@
         background 0.32s ease,
         z-index 0.2s ease;
       text-align: center;
-      transform-origin: center center; /* expande hacia todos los lados */
+      transform-origin: center center;
     }
 
-    /* HOVER LIMPIO, SUAVE Y EXPANSIVO (también a los lados) */
     .project-card:hover {
       transform: translateY(-6px) scale(1.10);
       box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
@@ -235,8 +244,6 @@
       text-align: center;
     }
 
-    /* DETALLES EN HOVER (TEXTO EXTRA) */
-
     .project-details {
       max-height: 0;
       opacity: 0;
@@ -261,7 +268,6 @@
       margin-top: 10px;
     }
 
-    /* stagger animations for project cards */
     .project-card:nth-of-type(1) { animation-delay: 0.12s; }
     .project-card:nth-of-type(2) { animation-delay: 0.18s; }
     .project-card:nth-of-type(3) { animation-delay: 0.24s; }
@@ -312,7 +318,7 @@
 </head>
 <body>
   <main class="page">
-    <!-- HEADER -->
+    <!-- HEADER (SIN TARJETA) -->
     <header class="header-card">
       <h1 class="title">Jean Paul Angulo</h1>
       <p class="subtitle">Project Manager · Operational Excellence · Streaming Operations</p>
@@ -332,8 +338,8 @@
       </div>
     </header>
 
-    <!-- ABOUT ME (más sugerente) -->
-    <section class="module">
+    <!-- ABOUT (SIN TARJETA) -->
+    <section class="about-section">
       <p class="section-label">About</p>
       <h2 class="section-title">About Me</h2>
       <p class="small">
@@ -351,11 +357,10 @@
       </p>
     </section>
 
-    <!-- TOP 3 PROJECTS (BASEBALL CARD) -->
+    <!-- KEY PROJECTS (TOP 3) -->
     <section>
-      <p class="section-heading">Key Projects (Top 3)</p>
+      <p class="section-heading">KEY PROJECTS (TOP 3)</p>
       <div class="project-grid-top">
-        <!-- TOP PROJECT 1 -->
         <article class="project-card">
           <h3>Global Audit the Auditor (ATA) Program</h3>
           <p class="tagline">Prime Video · Quality Systems</p>
@@ -373,7 +378,6 @@
           </div>
         </article>
 
-        <!-- TOP PROJECT 2 -->
         <article class="project-card">
           <h3>Global QA Framework – Unified Audit System</h3>
           <p class="tagline">Prime Video · Multi-Site Operations</p>
@@ -391,7 +395,6 @@
           </div>
         </article>
 
-        <!-- TOP PROJECT 3 -->
         <article class="project-card">
           <h3>Support Excellence & Ticketing Workflow Integration</h3>
           <p class="tagline">Prime Video · Digiflex Troubleshooting</p>
@@ -411,11 +414,10 @@
       </div>
     </section>
 
-    <!-- MORE PROJECTS (BASEBALL CARD) -->
+    <!-- MORE PROJECTS -->
     <section>
-      <p class="section-heading">More Projects</p>
+      <p class="section-heading">MORE PROJECTS</p>
       <div class="project-grid-more">
-        <!-- Calibration System -->
         <article class="project-card">
           <h3>Global Performance Calibration System</h3>
           <p class="tagline">Prime Video · People & Performance</p>
@@ -433,7 +435,6 @@
           </div>
         </article>
 
-        <!-- Kamino 2.0 -->
         <article class="project-card">
           <h3>Kamino 2.0 Walkthrough & Enablement</h3>
           <p class="tagline">Prime Video · Tool Adoption</p>
@@ -451,7 +452,6 @@
           </div>
         </article>
 
-        <!-- TVOD Account Management -->
         <article class="project-card">
           <h3>TVOD Account Management – Madrid Site</h3>
           <p class="tagline">Prime Video · Ownership & Tooling</p>
@@ -469,7 +469,6 @@
           </div>
         </article>
 
-        <!-- Partner Support Redelivery -->
         <article class="project-card">
           <h3>Partner Support: Redelivery Onboard</h3>
           <p class="tagline">Prime Video · Workflow Integration</p>
@@ -487,7 +486,6 @@
           </div>
         </article>
 
-        <!-- Error Taxonomy Redesign -->
         <article class="project-card">
           <h3>Error Taxonomy Redesign – Internal Support</h3>
           <p class="tagline">Prime Video · Data & Insights</p>
@@ -505,7 +503,6 @@
           </div>
         </article>
 
-        <!-- Metadata Corrections Pilot -->
         <article class="project-card">
           <h3>ATM: Metadata – Internal Corrections Pilot</h3>
           <p class="tagline">Prime Video · Pilot & Automation</p>
@@ -522,7 +519,6 @@
           </div>
         </article>
 
-        <!-- Workload Allocation -->
         <article class="project-card">
           <h3>Optimizing Workload Allocation (ATM)</h3>
           <p class="tagline">Prime Video · Capacity & Planning</p>
@@ -540,7 +536,6 @@
           </div>
         </article>
 
-        <!-- Ticket Resolution KPIs -->
         <article class="project-card">
           <h3>Exceeding Ticket Resolution KPIs</h3>
           <p class="tagline">Prime Video · Individual & Team Impact</p>
@@ -558,7 +553,6 @@
           </div>
         </article>
 
-        <!-- Multi-Site QA Standardization -->
         <article class="project-card">
           <h3>Standardizing QA Across Multi-Site Troubleshooting</h3>
           <p class="tagline">Prime Video · Global Alignment</p>
@@ -582,7 +576,7 @@
     <section class="bottom-grid">
       <aside class="module">
         <p class="section-label">Profile</p>
-        <h3 class="section-title">Skills & Tools</h3>
+        <h3 class="section-title">SKILLS & TOOLS</h3>
         <ul class="clean small">
           <li><strong>Core skills:</strong> Project Management, Operational Excellence, Continuous Improvement, Stakeholder Alignment, Troubleshooting, Workflow Design, SOP Development, Training & Enablement, Data-Informed Decisions.</li>
           <li><strong>Domains:</strong> Streaming & OTT, Digital Content Operations, Media Supply Chain, QA & Calibration, Launch Operations, Partner Support.</li>
@@ -592,7 +586,7 @@
 
       <aside class="module">
         <p class="section-label">Resources & Contact</p>
-        <h3 class="section-title">Documents & Contact</h3>
+        <h3 class="section-title">DOCUMENTS & CONTACT</h3>
         <p class="small">Download my CVs and portfolio or get in touch:</p>
         <div class="doc-links small">
           <a href="docs/CV_JeanPaul_Angulo_ProjectManager.pdf" target="_blank" rel="noopener">CV – Project Manager</a><br />
