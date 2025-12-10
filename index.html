@@ -141,7 +141,7 @@
 
     .header-hero {
       width: 100%;
-      padding: 80px 24px 92px;
+      padding: 80px 24px 72px;
       text-align: center;
 
       background:
@@ -162,7 +162,7 @@
       font-size: 3.2rem;
       font-weight: 800;
       margin: 0 0 14px;
-      letter-spacing: 0.12em; /* un poco más amplio para el nombre */
+      letter-spacing: 0.12em;
     }
 
     .role-tag {
@@ -180,7 +180,7 @@
       font-size: 1.24rem;
       color: var(--muted);
       margin: 0 0 18px;
-      max-width: 880px;      /* antes 780px */
+      max-width: 880px;     /* más ancho para evitar cortar "scale" sola */
       line-height: 1.5;
       margin-left: auto;
       margin-right: auto;
@@ -235,6 +235,39 @@
       background: #ffffff;
     }
 
+    /* Scroll indicator */
+
+    .scroll-indicator {
+      margin-top: 32px;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      opacity: 0.85;
+    }
+
+    .scroll-indicator span {
+      font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .scroll-indicator-arrow {
+      font-size: 1.2rem;
+      animation: arrowBounce 1.4s ease-in-out infinite;
+    }
+
+    @keyframes arrowBounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(4px);
+      }
+    }
+
     /* ========= ABOUT ME ========= */
 
     .about-section {
@@ -278,6 +311,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 20px;
+      perspective: 1400px; /* para el tilt 3D de top-project */
     }
 
     @media (max-width: 900px) {
@@ -302,10 +336,12 @@
     /* ========= PROJECT CARDS (BASE) ========= */
 
     .project-card {
+      position: relative;
       background: var(--card-bg);
       border-radius: var(--radius);
       border: 1px solid var(--border);
       padding: 16px 16px 14px;
+      padding-top: 18px;
 
       box-shadow: var(--shadow-soft);
       text-align: center;
@@ -325,11 +361,56 @@
         z-index 0.4s ease;
     }
 
+    /* Barra superior de categoría */
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #dde3ff;
+    }
+
+    /* Colores por categoría */
+    .cat-quality::before {
+      background: linear-gradient(90deg, #5a7bff, #9c7dff);
+    }
+
+    .cat-ops::before {
+      background: linear-gradient(90deg, #34b3ff, #5a7bff);
+    }
+
+    .cat-workflow::before {
+      background: linear-gradient(90deg, #ffb347, #ff7b72);
+    }
+
+    .cat-people::before {
+      background: linear-gradient(90deg, #7cd992, #4fb4ff);
+    }
+
+    .cat-data::before {
+      background: linear-gradient(90deg, #ffc857, #ff8c42);
+    }
+
+    .cat-partner::before {
+      background: linear-gradient(90deg, #70c2ff, #9b9fff);
+    }
+
     @keyframes card-in {
       to {
         opacity: 1;
         transform: translateY(0) scale(1);
       }
+    }
+
+    .project-category-label {
+      font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #8a8fb3;
+      margin: 4px 0 6px;
     }
 
     .project-card h3 {
@@ -344,8 +425,22 @@
     }
 
     .impact-line {
-      font-size: 0.9rem;
+      font-size: 0.86rem;
       margin-bottom: 6px;
+    }
+
+    .impact-label {
+      font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #7a81aa;
+      margin-right: 6px;
+    }
+
+    .impact-metrics {
+      font-size: 0.86rem;
+      color: var(--muted);
     }
 
     .project-summary {
@@ -380,17 +475,16 @@
     /* ========= DIFFERENTIATION: TOP vs MORE PROJECTS ========= */
 
     .top-project {
-      position: relative;
       background: linear-gradient(180deg, #ffffff, #f6f7ff);
       border-color: #ccd6ff;
+      transform-style: preserve-3d;
     }
 
-    .top-project::before {
+    .top-project::after {
       content: "TOP PROJECT";
       position: absolute;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
+      top: 8px;
+      right: 12px;
       font-size: 0.65rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -400,12 +494,8 @@
       border-radius: 999px;
     }
 
-    .top-project h3 {
-      margin-top: 20px; /* compensa la etiqueta TOP PROJECT */
-    }
-
     .top-project:hover {
-      transform: translateY(-6px) scale(1.10);
+      transform: translateY(-6px) scale(1.10) rotateX(2deg) rotateY(-2deg);
       box-shadow: 0 32px 70px rgba(0,0,0,0.18);
       background: #ffffff;
       border-color: #b4c3ff;
@@ -640,6 +730,11 @@
       <div class="pill">SOP & Training</div>
       <div class="pill">AI-Assisted Documentation</div>
     </div>
+
+    <div class="scroll-indicator">
+      <span>SCROLL TO PROJECTS</span>
+      <div class="scroll-indicator-arrow">⋁</div>
+    </div>
   </header>
 
   <!-- ================= PAGE CONTENT ================= -->
@@ -681,10 +776,14 @@
           <div class="project-grid-top">
 
             <!-- PROJECT 1 -->
-            <article class="project-card top-project">
+            <article class="project-card top-project cat-quality">
+              <p class="project-category-label">QUALITY SYSTEMS</p>
               <h3>GLOBAL AUDIT THE AUDITOR (ATA) PROGRAM</h3>
               <p class="tagline">Prime Video · Quality Systems</p>
-              <p class="impact-line">Cut QA blind spots and increased audit consistency across sites.</p>
+              <p class="impact-line">
+                <span class="impact-label">🎯 Impact</span>
+                <span class="impact-metrics">Reduced QA blind spots and aligned audit criteria across 3 regions.</span>
+              </p>
               <p class="project-summary">
                 Designed and rolled out a unified ATA system for troubleshooting workflows.
               </p>
@@ -697,10 +796,14 @@
             </article>
 
             <!-- PROJECT 2 -->
-            <article class="project-card top-project">
+            <article class="project-card top-project cat-ops">
+              <p class="project-category-label">GLOBAL OPERATIONS</p>
               <h3>GLOBAL QA FRAMEWORK – UNIFIED AUDIT SYSTEM</h3>
               <p class="tagline">Prime Video · Multi-Site Operations</p>
-              <p class="impact-line">Created one QA methodology used across regions.</p>
+              <p class="impact-line">
+                <span class="impact-label">🎯 Impact</span>
+                <span class="impact-metrics">One QA methodology for multi-site teams, enabling consistent performance reads.</span>
+              </p>
               <p class="project-summary">
                 Consolidated fragmented QA processes into a single scalable audit structure.
               </p>
@@ -713,10 +816,14 @@
             </article>
 
             <!-- PROJECT 3 -->
-            <article class="project-card top-project">
+            <article class="project-card top-project cat-workflow">
+              <p class="project-category-label">WORKFLOWS & PARTNER EXPERIENCE</p>
               <h3>SUPPORT EXCELLENCE & TICKETING WORKFLOW INTEGRATION</h3>
               <p class="tagline">Prime Video · Troubleshooting & PS</p>
-              <p class="impact-line">Reduced friction between ticket streams and improved partner experience.</p>
+              <p class="impact-line">
+                <span class="impact-label">🎯 Impact</span>
+                <span class="impact-metrics">Reduced duplicated work and clarified ownership across multiple support streams.</span>
+              </p>
               <p class="project-summary">
                 Integrated Internal Support, Partner Support and Redelivery workflows.
               </p>
@@ -741,10 +848,14 @@
 
       <div class="project-grid-more">
 
-        <article class="project-card secondary-project">
+        <article class="project-card secondary-project cat-people">
+          <p class="project-category-label">PEOPLE & PERFORMANCE</p>
           <h3>GLOBAL PERFORMANCE CALIBRATION SYSTEM</h3>
           <p class="tagline">People & Performance</p>
-          <p class="impact-line">Introduced structured SME calibration criteria.</p>
+          <p class="impact-line">
+            <span class="impact-label">Scope</span>
+            <span class="impact-metrics">SME calibration framework and criteria across teams.</span>
+          </p>
           <p class="project-summary">Helped design a global performance model.</p>
 
           <div class="project-details">
@@ -753,10 +864,14 @@
           </div>
         </article>
 
-        <article class="project-card secondary-project">
+        <article class="project-card secondary-project cat-ops">
+          <p class="project-category-label">OPERATIONS & OWNERSHIP</p>
           <h3>TVOD ACCOUNT MANAGEMENT – MADRID</h3>
           <p class="tagline">Ownership & Tooling</p>
-          <p class="impact-line">Centralized TVOD partner and workflow visibility.</p>
+          <p class="impact-line">
+            <span class="impact-label">Scope</span>
+            <span class="impact-metrics">Central tracker for TVOD partners and priorities.</span>
+          </p>
           <p class="project-summary">Implemented a tracker for priorities and blockers.</p>
 
           <div class="project-details">
@@ -765,10 +880,14 @@
           </div>
         </article>
 
-        <article class="project-card secondary-project">
+        <article class="project-card secondary-project cat-partner">
+          <p class="project-category-label">PARTNER WORKFLOWS</p>
           <h3>PARTNER SUPPORT: REDELIVERY ONBOARD</h3>
           <p class="tagline">Workflow Integration</p>
-          <p class="impact-line">Created unified structures for partner communication.</p>
+          <p class="impact-line">
+            <span class="impact-label">Scope</span>
+            <span class="impact-metrics">Alignment of internal flows with partner expectations.</span>
+          </p>
           <p class="project-summary">Aligned internal and partner-facing flows.</p>
 
           <div class="project-details">
@@ -777,10 +896,14 @@
           </div>
         </article>
 
-        <article class="project-card secondary-project">
+        <article class="project-card secondary-project cat-data">
+          <p class="project-category-label">DATA & TAXONOMY</p>
           <h3>ERROR TAXONOMY REDESIGN</h3>
           <p class="tagline">Data Quality</p>
-          <p class="impact-line">Improved reporting and RCA consistency.</p>
+          <p class="impact-line">
+            <span class="impact-label">Impact</span>
+            <span class="impact-metrics">More actionable error categories for reporting and RCA.</span>
+          </p>
           <p class="project-summary">Reworked vague categories into actionable taxonomy.</p>
 
           <div class="project-details">
@@ -789,10 +912,14 @@
           </div>
         </article>
 
-        <article class="project-card secondary-project">
+        <article class="project-card secondary-project cat-data">
+          <p class="project-category-label">PILOT & AUTOMATION</p>
           <h3>METADATA CORRECTIONS PILOT (ATM)</h3>
           <p class="tagline">Pilot & Automation</p>
-          <p class="impact-line">Streamlined metadata correction routing.</p>
+          <p class="impact-line">
+            <span class="impact-label">Scope</span>
+            <span class="impact-metrics">Pilot for routing and correcting metadata issues.</span>
+          </p>
           <p class="project-summary">Helped define pilot use cases and success metrics.</p>
 
           <div class="project-details">
@@ -801,10 +928,14 @@
           </div>
         </article>
 
-        <article class="project-card secondary-project">
+        <article class="project-card secondary-project cat-ops">
+          <p class="project-category-label">CAPACITY PLANNING</p>
           <h3>WORKLOAD ALLOCATION OPTIMIZATION</h3>
           <p class="tagline">Capacity Planning</p>
-          <p class="impact-line">Balanced high-complexity troubleshooting work.</p>
+          <p class="impact-line">
+            <span class="impact-label">Scope</span>
+            <span class="impact-metrics">ATM allocation logic for complex work.</span>
+          </p>
           <p class="project-summary">Helped structure ATM assignment logic.</p>
 
           <div class="project-details">
@@ -813,10 +944,14 @@
           </div>
         </article>
 
-        <article class="project-card secondary-project">
+        <article class="project-card secondary-project cat-people">
+          <p class="project-category-label">PERFORMANCE</p>
           <h3>EXCEEDING TICKET RESOLUTION KPIS</h3>
           <p class="tagline">Performance & QA</p>
-          <p class="impact-line">Consistently surpassed quality and timing targets.</p>
+          <p class="impact-line">
+            <span class="impact-label">Impact</span>
+            <span class="impact-metrics">Best-in-class KPIs while leading improvements.</span>
+          </p>
           <p class="project-summary">Combined volume + quality + ownership.</p>
 
           <div class="project-details">
@@ -825,10 +960,14 @@
           </div>
         </article>
 
-        <article class="project-card secondary-project">
+        <article class="project-card secondary-project cat-quality">
+          <p class="project-category-label">GLOBAL QA ALIGNMENT</p>
           <h3>STANDARDIZING QA ACROSS REGIONS</h3>
           <p class="tagline">Global Alignment</p>
-          <p class="impact-line">Unified expectations across multi-site troubleshooting.</p>
+          <p class="impact-line">
+            <span class="impact-label">Scope</span>
+            <span class="impact-metrics">Shared QA guidelines across multi-site troubleshooting.</span>
+          </p>
           <p class="project-summary">Supported the creation of shared QA guidelines.</p>
 
           <div class="project-details">
