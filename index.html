@@ -33,6 +33,31 @@
 
   color: var(--text);
 }
+    @keyframes bgPulse {
+  0% {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(150, 170, 255, 0.12), transparent 60%),
+      radial-gradient(circle at 80% 80%, rgba(100, 130, 255, 0.10), transparent 60%),
+      #f5f7ff;
+  }
+  50% {
+    background:
+      radial-gradient(circle at 22% 22%, rgba(150, 170, 255, 0.15), transparent 62%),
+      radial-gradient(circle at 78% 78%, rgba(100, 130, 255, 0.12), transparent 62%),
+      #f5f7ff;
+  }
+  100% {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(150, 170, 255, 0.12), transparent 60%),
+      radial-gradient(circle at 80% 80%, rgba(100, 130, 255, 0.10), transparent 60%),
+      #f5f7ff;
+  }
+}
+
+body {
+  animation: bgPulse 18s ease-in-out infinite;
+}
+
 
     .page {
       max-width: 1100px;
