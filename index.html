@@ -295,16 +295,11 @@
       margin: 6px 0;
     }
 
-    /* ========= BOTTOM GRID LAYOUT ========= */
+    /* ========= SKILLS FULL-WIDTH SECTION ========= */
 
-    .bottom-grid {
-      display: grid;
-      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
-      gap: 20px;
-    }
-
-    @media (max-width: 800px) {
-      .bottom-grid { grid-template-columns: 1fr; }
+    .skills-section {
+      margin-top: 10px;
+      margin-bottom: 40px;
     }
 
     .module {
@@ -435,64 +430,6 @@
       white-space: nowrap;
     }
 
-    /* ====== DOCUMENTS & CONTACT CUSTOM ====== */
-
-    .docs-module {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .docs-module::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #ffb347, #ff6f61);
-      opacity: 0.9;
-    }
-
-    .docs-module-inner {
-      margin-top: 8px;
-    }
-
-    .doc-list {
-      margin-top: 8px;
-      margin-bottom: 10px;
-    }
-
-    .doc-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      margin-bottom: 6px;
-    }
-
-    .doc-bullet {
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      border: 1px solid #ffd4b3;
-      background: #fff5ec;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-    }
-
-    .contact-list {
-      padding-left: 0;
-      list-style: none;
-      margin-top: 6px;
-    }
-
-    .contact-list li {
-      font-size: 0.9rem;
-      margin-bottom: 4px;
-    }
-
     /* ========= ANIMATION ========= */
 
     @keyframes fadeUp {
@@ -525,6 +462,8 @@
       <span>Bilingual ES/EN</span>
       <span><a href="mailto:jeanpaulangulo@gmail.com">jeanpaulangulo@gmail.com</a></span>
       <span><a href="https://www.linkedin.com/in/jeanpaulangulo/" target="_blank">LinkedIn</a></span>
+      <span><a href="docs/Portfolio_Projects_JeanPaul_Angulo.pdf" target="_blank">Portfolio (one-pager)</a></span>
+      <span><a href="docs/CV_JeanPaul_Angulo_ProjectManager.pdf" target="_blank">CV (PDF)</a></span>
     </div>
 
     <div class="pill-row">
@@ -739,10 +678,8 @@
       </div>
     </section>
 
-    <!-- SKILLS + CONTACT -->
-    <section class="bottom-grid">
-
-      <!-- SKILLS & TOOLS -->
+    <!-- SKILLS & TOOLS FULL-WIDTH -->
+    <section class="skills-section">
       <aside class="module skills-module">
         <div class="skills-module-inner">
           <div class="module-header">
@@ -806,48 +743,6 @@
           </div>
         </div>
       </aside>
-
-      <!-- DOCUMENTS & CONTACT -->
-      <aside class="module docs-module">
-        <div class="docs-module-inner">
-          <div class="module-header">
-            <div class="module-icon">📄</div>
-            <div class="module-header-text">
-              <span class="module-header-label">Resources</span>
-              <span class="module-header-title">DOCUMENTS & CONTACT</span>
-            </div>
-          </div>
-
-          <p class="small">
-            Download tailored versions of my CV or a one-page project snapshot, or get in touch directly:
-          </p>
-
-          <div class="doc-list small">
-            <div class="doc-item">
-              <div class="doc-bullet">PM</div>
-              <a href="docs/CV_JeanPaul_Angulo_ProjectManager.pdf" target="_blank">CV – Project Manager</a>
-            </div>
-            <div class="doc-item">
-              <div class="doc-bullet">OTT</div>
-              <a href="docs/CV_JeanPaul_Angulo_StreamingOps.pdf" target="_blank">CV – Streaming / Digital Operations</a>
-            </div>
-            <div class="doc-item">
-              <div class="doc-bullet">OPS</div>
-              <a href="docs/CV_JeanPaul_Angulo_ProcessOptimization.pdf" target="_blank">CV – Process Optimization</a>
-            </div>
-            <div class="doc-item">
-              <div class="doc-bullet">PX</div>
-              <a href="docs/Portfolio_Projects_JeanPaul_Angulo.pdf" target="_blank">Project Portfolio – One Pager</a>
-            </div>
-          </div>
-
-          <ul class="contact-list small">
-            <li>Email: <a href="mailto:jeanpaulangulo@gmail.com">jeanpaulangulo@gmail.com</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/jeanpaulangulo/" target="_blank">linkedin.com/in/jeanpaulangulo</a></li>
-          </ul>
-        </div>
-      </aside>
-
     </section>
 
   </main>
