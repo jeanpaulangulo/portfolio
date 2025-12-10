@@ -29,7 +29,7 @@
     }
 
     .page {
-      max-width: 980px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
@@ -38,7 +38,7 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow-soft);
       padding: 28px 28px 20px;
-      margin-bottom: 28px;
+      margin-bottom: 20px;
       border: 1px solid var(--border);
       animation: fadeUp 0.5s ease-out forwards;
       opacity: 0;
@@ -93,18 +93,6 @@
       color: var(--muted);
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
-      gap: 20px;
-    }
-
-    @media (max-width: 800px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
     .module {
       background: var(--card-bg);
       border-radius: var(--radius);
@@ -119,39 +107,18 @@
     }
 
     .module:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
       border-color: #d6e2ff;
       background: #fcfdff;
     }
 
-    /* Pequeños delays para efecto "staggered" */
-    .module:nth-of-type(1) { animation-delay: 0.1s; }
-    .module:nth-of-type(2) { animation-delay: 0.18s; }
-    .module:nth-of-type(3) { animation-delay: 0.26s; }
-    .module:nth-of-type(4) { animation-delay: 0.34s; }
-    .module:nth-of-type(5) { animation-delay: 0.42s; }
-    .module:nth-of-type(6) { animation-delay: 0.50s; }
-
-    .module h2,
-    .module h3 {
-      margin: 0 0 6px;
-      font-size: 1.02rem;
-    }
-
-    .tagline {
-      font-size: 0.86rem;
+    .section-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .impact-line {
-      font-size: 0.9rem;
-      margin: 4px 0;
-    }
-
-    .impact-line strong {
-      font-weight: 600;
+      margin: 0 0 6px;
     }
 
     .section-title {
@@ -164,13 +131,142 @@
       color: var(--muted);
     }
 
-    ul.clean {
-      padding-left: 18px;
-      margin: 6px 0 4px;
+    /* PROJECT GRIDS */
+
+    .section-heading {
+      font-size: 1.1rem;
+      margin: 24px 0 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
-    ul.clean li {
-      margin-bottom: 4px;
+    .project-grid-top {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    .project-grid-more {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 950px) {
+      .project-grid-top {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .project-grid-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 16px 14px;
+      cursor: default;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.6s ease-out forwards;
+      transition:
+        transform 0.2s ease-out,
+        box-shadow 0.2s ease-out,
+        border-color 0.2s ease-out,
+        background 0.2s ease-out;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
+      border-color: #d6e2ff;
+      background: #fcfdff;
+    }
+
+    .project-card h3 {
+      margin: 0 0 4px;
+      font-size: 1rem;
+    }
+
+    .tagline {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+
+    .impact-line {
+      font-size: 0.9rem;
+      margin: 0 0 4px;
+    }
+
+    .impact-line strong {
+      font-weight: 600;
+    }
+
+    .project-summary {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin: 2px 0 0;
+    }
+
+    /* Hover details (expand on hover) */
+
+    .project-details {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition:
+        max-height 0.25s ease-out,
+        opacity 0.2s ease-out,
+        margin-top 0.2s ease-out;
+      margin-top: 0;
+    }
+
+    .project-details p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin: 6px 0 0;
+    }
+
+    .project-card:hover .project-details {
+      max-height: 220px; /* suficiente para el texto extra */
+      opacity: 1;
+      margin-top: 6px;
+    }
+
+    /* stagger animations for project cards */
+    .project-card:nth-of-type(1) { animation-delay: 0.12s; }
+    .project-card:nth-of-type(2) { animation-delay: 0.18s; }
+    .project-card:nth-of-type(3) { animation-delay: 0.24s; }
+    .project-card:nth-of-type(4) { animation-delay: 0.30s; }
+    .project-card:nth-of-type(5) { animation-delay: 0.36s; }
+    .project-card:nth-of-type(6) { animation-delay: 0.42s; }
+    .project-card:nth-of-type(7) { animation-delay: 0.48s; }
+    .project-card:nth-of-type(8) { animation-delay: 0.54s; }
+    .project-card:nth-of-type(9) { animation-delay: 0.60s; }
+
+    /* BOTTOM GRID FOR SKILLS & CONTACT */
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    @media (max-width: 800px) {
+      .bottom-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .doc-links a {
@@ -178,6 +274,15 @@
       margin-right: 12px;
       margin-bottom: 6px;
       font-size: 0.9rem;
+    }
+
+    ul.clean {
+      padding-left: 18px;
+      margin: 6px 0 4px;
+    }
+
+    ul.clean li {
+      margin-bottom: 4px;
     }
 
     @keyframes fadeUp {
@@ -204,106 +309,235 @@
         <div class="pill">Process Optimization</div>
         <div class="pill">Global Workflows</div>
         <div class="pill">Streaming & Digital Media</div>
+        <div class="pill">Troubleshooting & QA</div>
         <div class="pill">SOP & Training</div>
         <div class="pill">AI-Assisted Documentation</div>
       </div>
     </header>
 
-    <!-- MAIN GRID -->
-    <section class="grid">
-      <!-- LEFT COLUMN: PROJECT MODULES -->
-      <div>
-        <article class="module">
-          <h2>Global Troubleshooting Workflow Standardization</h2>
+    <!-- ABOUT ME -->
+    <section class="module">
+      <p class="section-label">About</p>
+      <h2 class="section-title">About Me</h2>
+      <p class="small">
+        Project Manager and Operations Lead with 10+ years of experience in streaming, digital media and global operations (Amazon Prime Video, Disney+, Paramount+, DAZN, Fox Networks, Antena 3). I specialize in
+        <strong>designing and scaling workflows</strong>, reducing operational friction, and turning complex, multi-team problems into measurable, sustainable solutions.
+      </p>
+      <p class="small">
+        Across my career, I've led initiatives that reduced duplicated troubleshooting by <strong>30%</strong>, cut time-to-resolution for complex cases by <strong>15%</strong>, enabled <strong>24/7 coverage</strong> with existing headcount, and improved delivery reliability for partners like FIBA, Paramount+ and YouTube Studios. My sweet spot sits between
+        <strong>operations, product, and technology</strong>: aligning teams, standardizing processes, and using data and tools (Jira, Slack workflows, automation, analytics) to drive better decisions and customer outcomes.
+      </p>
+    </section>
+
+    <!-- TOP 3 PROJECTS -->
+    <section>
+      <p class="section-heading">Key Projects (Top 3)</p>
+      <div class="project-grid-top">
+        <!-- TOP PROJECT 1 -->
+        <article class="project-card">
+          <h3>Global Troubleshooting Workflow Standardization</h3>
           <p class="tagline">Amazon Prime Video · Global Operations</p>
           <p class="impact-line">
-            Reduced duplicated efforts by <strong>30%</strong> and improved resolution time by <strong>15%</strong> by aligning SMEs across JP, IN, CR, and EU and defining shared best-practice guidelines for complex case handling.
+            <strong>30%</strong> less duplicated work · <strong>15%</strong> faster complex case resolution.
           </p>
+          <p class="project-summary">
+            Unified how regional teams approach complex cases by aligning SMEs and consolidating workflows.
+          </p>
+          <div class="project-details">
+            <p>
+              Led cross-regional SME forums connecting JP, IN, CR and EU, identified overlapping processes, and created shared playbooks and best-practice guidelines. This reduced repeated troubleshooting, improved visibility into root causes, and strengthened trust between regions.
+            </p>
+          </div>
         </article>
 
-        <article class="module">
-          <h2>Redelivery → Partner Support Workflow Integration</h2>
+        <!-- TOP PROJECT 2 -->
+        <article class="project-card">
+          <h3>Redelivery → Partner Support Workflow Integration</h3>
           <p class="tagline">Amazon Prime Video · Workflow Integration</p>
           <p class="impact-line">
-            Integrated two fragmented workflows, enabling the team to absorb <strong>20%+ more case volume</strong> with no SLA impact while improving ownership, traceability, and partner experience.
+            <strong>20%+</strong> additional volume absorbed · zero SLA impact.
           </p>
+          <p class="project-summary">
+            Rebuilt a fragmented process into a single, scalable partner-facing workflow.
+          </p>
+          <div class="project-details">
+            <p>
+              Mapped the end-to-end lifecycle of partner-impacting issues, redesigned SOPs with clear ownership, and implemented better tracking for redeliveries. This allowed the team to handle more cases without sacrificing speed or customer experience.
+            </p>
+          </div>
         </article>
 
-        <article class="module">
-          <h2>Global Handover Model & 24/7 Operational Coverage</h2>
+        <!-- TOP PROJECT 3 -->
+        <article class="project-card">
+          <h3>Global Handover Model & 24/7 Operational Coverage</h3>
           <p class="tagline">Amazon Prime Video · Follow-the-Sun Design</p>
           <p class="impact-line">
-            Designed a follow-the-sun handover process across four regions, <strong>tripling effective operational coverage</strong> without adding headcount and reducing idle time between shifts.
+            <strong>3×</strong> effective coverage · same headcount.
           </p>
+          <p class="project-summary">
+            Designed a structured handover model connecting four regions into a continuous operation.
+          </p>
+          <div class="project-details">
+            <p>
+              Defined a follow-the-sun framework with standard handover templates, priority signals, and escalation rules across Madrid, Chennai, Costa Rica and Tokyo. Reduced idle time between shifts, protected SLAs, and added predictability for high-risk cases.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- MORE PROJECTS -->
+    <section>
+      <p class="section-heading">More Projects</p>
+      <div class="project-grid-more">
+        <!-- FIBA / DAZN -->
+        <article class="project-card">
+          <h3>FIBA Live Events SOP & Delivery Tracker</h3>
+          <p class="tagline">DAZN · Live Events & VOD</p>
+          <p class="impact-line">
+            Late deliveries reduced from <strong>34%</strong> to <strong>11%</strong>.
+          </p>
+          <p class="project-summary">
+            Turned ad-hoc support into a structured, trackable workflow for international basketball events.
+          </p>
+          <div class="project-details">
+            <p>
+              Built an end-to-end SOP, delivery tracker and client-facing communication model for FIBA tournaments, enabling faster issue detection, clearer expectations for live event assets, and more transparent reporting to the client during peak periods.
+            </p>
+          </div>
         </article>
 
-        <article class="module">
-          <h2>Kamino 2.0 SOP Migration & Training Rollout</h2>
+        <!-- Slack Workflows / Paramount+ -->
+        <article class="project-card">
+          <h3>Slack Workflows & Channel Redesign</h3>
+          <p class="tagline">Paramount+ · Internal Client Communication</p>
+          <p class="impact-line">
+            Saved <strong>80+ hours/month</strong> in alignment meetings.
+          </p>
+          <p class="project-summary">
+            Replaced noisy, unstructured chats with workflow-based, trackable requests.
+          </p>
+          <div class="project-details">
+            <p>
+              Designed three purpose-specific Slack channels (pre-launch issues, fast-track titles at risk, catalogue redeliveries) and built workflow templates with mandatory fields (title, region, date, priority, brand, issue type). This eliminated a recurring weekly 1-hour meeting per stakeholder group and enabled proper tracking of request volume.
+            </p>
+          </div>
+        </article>
+
+        <!-- Testlio QC / Jira -->
+        <article class="project-card">
+          <h3>Testlio QC Migration – From Excel to Jira</h3>
+          <p class="tagline">Paramount · QC & Data</p>
+          <p class="impact-line">
+            ~<strong>2,600</strong> issues processed → stabilized at ~<strong>100</strong>/month.
+          </p>
+          <p class="project-summary">
+            Brought structure and analytics to large-scale QC findings and redeliveries.
+          </p>
+          <div class="project-details">
+            <p>
+              Led the migration of external QC reports (Testlio) into Jira by redefining fields, workflows and ownership with all media supply chain teams. The initial backlog of thousands of issues was processed and long-term volume dropped dramatically as root causes were fixed.
+            </p>
+          </div>
+        </article>
+
+        <!-- YouTube Studios Launch -->
+        <article class="project-card">
+          <h3>YouTube Studios Launch – Multi-Region Delivery</h3>
+          <p class="tagline">Paramount · Launch Operations</p>
+          <p class="impact-line">
+            ~<strong>26,000</strong> assets delivered · <strong>99.8%</strong> on time.
+          </p>
+          <p class="project-summary">
+            Co-led content delivery for YouTube Studios across UK, FR, DE and AU under tight timelines.
+          </p>
+          <div class="project-details">
+            <p>
+              Coordinated with localization, metadata and delivery teams, set up dedicated Slack channels and weekly check-ins, and tracked risks proactively. Achieved on-time delivery for almost all required assets, with only a small fraction delayed due to external dependencies.
+            </p>
+          </div>
+        </article>
+
+        <!-- Kamino 2.0 -->
+        <article class="project-card">
+          <h3>Kamino 2.0 SOP Migration & Training</h3>
           <p class="tagline">Amazon Prime Video · SOP & Enablement</p>
           <p class="impact-line">
-            Delivered a full SOP redesign, global training sessions, and AI-supported documentation improvements—reducing errors, improving consistency, and decreasing onboarding time for new team members.
+            Reduced training-related errors and onboarding time.
           </p>
+          <p class="project-summary">
+            Rebuilt core troubleshooting documentation and trained global teams on the new model.
+          </p>
+          <div class="project-details">
+            <p>
+              Authored detailed SOPs for Kamino 2.0 workflows, ran global training sessions and shadowing programs, and used AI-assisted documentation to keep content up to date. This improved consistency in case handling and made onboarding more efficient.
+            </p>
+          </div>
         </article>
 
-        <article class="module">
-          <h2>QA Calibration Re-Alignment Across Regions</h2>
+        <!-- QA Calibration -->
+        <article class="project-card">
+          <h3>QA Calibration Re-Alignment Across Regions</h3>
           <p class="tagline">Amazon Prime Video · Quality & Calibration</p>
           <p class="impact-line">
-            Redefined QA criteria, led new calibration cycles, and introduced clearer reference materials, significantly increasing audit consistency and cross-regional trust in quality metrics.
+            Higher QA consistency and stronger trust in scores.
           </p>
+          <p class="project-summary">
+            Rebuilt the calibration model for audits across multiple locations.
+          </p>
+          <div class="project-details">
+            <p>
+              Defined clearer QA criteria, led calibration cycles with SMEs and auditors, and created reference materials that helped align expectations. This reduced variance between reviewers and restored confidence in quality metrics.
+            </p>
+          </div>
         </article>
 
-        <article class="module">
-          <h2>Tokyo Global Offsite: Cross-Regional Leadership Alignment</h2>
+        <!-- Tokyo Offsite -->
+        <article class="project-card">
+          <h3>Tokyo Global Offsite – Leadership Alignment</h3>
           <p class="tagline">Amazon Prime Video · Strategy & Collaboration</p>
           <p class="impact-line">
-            Designed and facilitated a multi-day offsite that resulted in a new communications and escalation model adopted by global troubleshooting teams, improving operational clarity and collaboration.
+            New escalation & communication model adopted globally.
           </p>
+          <p class="project-summary">
+            Brought together global leaders to reset how troubleshooting teams connect and escalate.
+          </p>
+          <div class="project-details">
+            <p>
+              Designed and facilitated a multi-day offsite focused on clarifying responsibilities, escalation paths and communication rules. The resulting framework was adopted by global troubleshooting teams and used as a baseline for future initiatives.
+            </p>
+          </div>
         </article>
       </div>
+    </section>
 
-      <!-- RIGHT COLUMN: ABOUT / SKILLS / DOCS -->
-      <div>
-        <aside class="module">
-          <h3 class="section-title">About Me</h3>
-          <p class="small">
-            Project Manager and Operations Lead with 10+ years of experience in streaming, digital media workflows, and global operations. I specialize in optimizing processes, scaling cross-regional collaboration, and delivering measurable improvements in complex environments (Amazon Prime Video, Disney+, Paramount+, DAZN).
-          </p>
-          <p class="small">
-            My focus areas include <strong>process optimization, troubleshooting workflows, SOP development, operational analytics, and AI-assisted documentation</strong>.
-          </p>
-        </aside>
+    <!-- SKILLS + DOCS & CONTACT -->
+    <section class="bottom-grid">
+      <aside class="module">
+        <p class="section-label">Profile</p>
+        <h3 class="section-title">Skills & Tools</h3>
+        <ul class="clean small">
+          <li><strong>Core skills:</strong> Project Management, Operational Excellence, Continuous Improvement, Stakeholder Alignment, Troubleshooting, Workflow Design, SOP Development, Training & Enablement, Data-Informed Decisions.</li>
+          <li><strong>Domains:</strong> Streaming & OTT, Digital Content Operations, Media Supply Chain, QA & Calibration, Launch Operations, Live Events & VOD.</li>
+          <li><strong>Tools:</strong> Excel (Advanced), Airtable, Jira, Salesforce, Asana, Slack Workflow Builder, SharePoint.</li>
+        </ul>
+      </aside>
 
-        <aside class="module">
-          <h3 class="section-title">Skills & Tools</h3>
-          <ul class="clean small">
-            <li><strong>Core skills:</strong> Project Management, Operational Excellence, Continuous Improvement, Stakeholder Alignment, Troubleshooting, Workflow Design, SOP Development, Data-Informed Decisions.</li>
-            <li><strong>Tools:</strong> Excel (Advanced), Airtable, Jira, Salesforce, Asana, Slack Workflow Builder, SharePoint.</li>
-          </ul>
-        </aside>
-
-        <aside class="module">
-          <h3 class="section-title">Documents</h3>
-          <p class="small">Download my CVs and project portfolio:</p>
-          <div class="doc-links small">
-            <a href="docs/CV_JeanPaul_Angulo_ProjectManager.pdf" target="_blank" rel="noopener">CV – Project Manager</a><br />
-            <a href="docs/CV_JeanPaul_Angulo_StreamingOps.pdf" target="_blank" rel="noopener">CV – Streaming / Digital Operations</a><br />
-            <a href="docs/CV_JeanPaul_Angulo_ProcessOptimization.pdf" target="_blank" rel="noopener">CV – Process Optimization</a><br />
-            <a href="docs/Portfolio_Projects_JeanPaul_Angulo.pdf" target="_blank" rel="noopener">Project Portfolio – One Pager</a>
-          </div>
-        </aside>
-
-        <aside class="module">
-          <h3 class="section-title">Contact</h3>
-          <p class="small">
-            For collaborations or opportunities:
-          </p>
-          <ul class="clean small">
-            <li>Email: <a href="mailto:jeanpaulangulo@gmail.com">jeanpaulangulo@gmail.com</a></li>
-            <li>LinkedIn: <a href="<your-linkedin-url>" target="_blank" rel="noopener">https://www.linkedin.com/in/jeanpaulangulo/</a></li>
-          </ul>
-        </aside>
-      </div>
+      <aside class="module">
+        <p class="section-label">Resources & Contact</p>
+        <h3 class="section-title">Documents & Contact</h3>
+        <p class="small">Download my CVs and portfolio or get in touch:</p>
+        <div class="doc-links small">
+          <a href="docs/CV_JeanPaul_Angulo_ProjectManager.pdf" target="_blank" rel="noopener">CV – Project Manager</a><br />
+          <a href="docs/CV_JeanPaul_Angulo_StreamingOps.pdf" target="_blank" rel="noopener">CV – Streaming / Digital Operations</a><br />
+          <a href="docs/CV_JeanPaul_Angulo_ProcessOptimization.pdf" target="_blank" rel="noopener">CV – Process Optimization</a><br />
+          <a href="docs/Portfolio_Projects_JeanPaul_Angulo.pdf" target="_blank" rel="noopener">Project Portfolio – One Pager</a>
+        </div>
+        <ul class="clean small">
+          <li>Email: <a href="mailto:jeanpaulangulo@gmail.com">jeanpaulangulo@gmail.com</a></li>
+          <li>LinkedIn: <a href="<your-linkedin-url>" target="_blank" rel="noopener">https://www.linkedin.com/in/jeanpaulangulo/</a></li>
+        </ul>
+      </aside>
     </section>
   </main>
 </body>
