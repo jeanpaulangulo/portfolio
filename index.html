@@ -236,19 +236,6 @@
       transform: translateY(20px);
     }
 
-    .section-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .section-title {
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-    }
-
     .small {
       font-size: 0.92rem;
       color: var(--muted);
@@ -263,7 +250,7 @@
       margin: 20px 0 32px;
     }
 
-    /* ========= PROJECTS GRID ========= */
+    /* ========= SECTION HEADING (shared) ========= */
 
     .section-heading {
       font-size: 1.1rem;
@@ -274,6 +261,8 @@
       font-weight: 700;
       letter-spacing: 0.08em;
     }
+
+    /* ========= PROJECTS GRID ========= */
 
     .project-grid-top {
       display: grid;
@@ -460,51 +449,6 @@
       max-width: 100%;
     }
 
-    /* ====== GENERIC MODULE HEADER (icon + title) ====== */
-
-    .module-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .module-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #eef1ff;
-      font-size: 15px;
-      transition: transform 0.2s ease;
-    }
-
-    .module:hover .module-icon {
-      transform: rotate(-3deg) scale(1.05);
-    }
-
-    .module-header-text {
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-    }
-
-    .module-header-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-    }
-
-    .module-header-title {
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
     /* ====== SKILLS & TOOLS CUSTOM (HORIZONTAL) ====== */
 
     .skills-section {
@@ -530,7 +474,7 @@
     }
 
     .skills-module-inner {
-      margin-top: 8px;
+      margin-top: 14px;
       text-align: center;
       max-width: 900px;
       margin-left: auto;
@@ -695,7 +639,7 @@
 
     <!-- ABOUT ME -->
     <section id="about" class="about-section">
-      <h2 class="section-title">About Me</h2>
+      <p class="section-heading">ABOUT ME</p>
 
       <p class="small">
         Project Manager and Operations Lead with 10+ years of experience in streaming, digital media and global operations
@@ -891,13 +835,10 @@
 
     <!-- SKILLS & TOOLS FULL-WIDTH -->
     <section id="skills" class="skills-section">
+      <p class="section-heading">SKILLS & TOOLS</p>
+
       <aside class="module skills-module">
         <div class="skills-module-inner">
-
-          <div class="module-header">
-              <span class="module-header-title">SKILLS & TOOLS</span>
-            </div>
-          </div>
 
           <p class="skills-block-title">
             <span class="skills-icon">⭐</span> Core Skills
