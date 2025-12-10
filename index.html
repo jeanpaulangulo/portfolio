@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tu Nombre | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Professional portfolio of Tu Nombre" />
+
+  <style>
+    /* ---------- RESET SENCILLO ---------- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f5f7;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ---------- LAYOUT GENERAL ---------- */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(245, 245, 247, 0.9);
+      border-bottom: 1px solid rgba(209, 213, 219, 0.7);
+    }
+
+    .nav {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-left {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      opacity: 0.7;
+      transition: opacity 0.2s ease, transform 0.1s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 3rem 0 2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+      max-width: 32rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tag {
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid #111827;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease,
+        box-shadow 0.15s ease;
+      background: #111827;
+      color: #f9fafb;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.15);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: #111827;
+      border-color: #d1d5db;
+      box-shadow: none;
+    }
+
+    .btn-secondary:hover {
+      background: #f3f4f6;
+    }
+
+    .hero-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #e5e7eb;
+      margin-left: auto;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* ---------- SECCIONES ---------- */
+    .section {
+      margin-top: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6b7280;
+      margin-bottom: 1.5rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 1.3rem 1.4rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    }
+
+    .card-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+    }
+
+    .chip {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: #f3f4f6;
+      color: #4b5563;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 1.5rem 1.5rem 2rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-photo {
+        margin: 0 auto;
+      }
+
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- NAVBAR -->
+    <header>
+      <div class="nav">
+        <div class="nav-left">TU NOMBRE</div>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <!-- HERO -->
+        <section class="hero">
+          <div>
+            <h1 class="hero-title">Jean Paul Angulo</h1>
+            <p class="hero-subtitle">
+              Project Manager and Operations Lead with 10+ years of experience in streaming, digital media workflows, and global operations. I specialize in optimizing processes, scaling cross-regional collaboration, and delivering measurable improvements in complex environments (Amazon Prime Video, Disney+, Paramount+, DAZN).
+              My focus areas include: **Process Optimization · Troubleshooting Workflows · SOP Development · Operational Analytics · AI-Assisted Documentation**
+            </p>
+
+            <div class="hero-tags">
+              <span class="tag">Project Management</span>
+              <span class="tag">Operations</span>
+              <span class="tag">Streaming / OTT</span>
+              <span class="tag">Data-informed decisions</span>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn" href="CV-LINK-AQUI" target="_blank">Download CV</a>
+              <a class="btn btn-secondary" href="#projects">View projects</a>
+            </div>
+          </div>
+
+          <div class="hero-photo">
+            <!-- Sustituye esto por una imagen tuya si quieres -->
+            Add your photo here (180×180) or keep this clean circle.
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section">
+          <h2 class="section-title">About</h2>
+          <div class="card">
+            <p class="card-text">
+              Aquí puedes poner un pequeño párrafo (5–7 líneas) resumiendo tu perfil:
+              años de experiencia, en qué industrias has trabajado, tus fortalezas
+              principales y qué tipo de roles buscas ahora.
+            </p>
+          </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="section">
+          <h2 class="section-title">Experience</h2>
+          <div class="grid grid-2">
+            <!-- Card 1 -->
+            <article class="card">
+              <h3 class="card-title">Process Lead & SME – Amazon Prime Video</h3>
+              <p class="card-meta">2022 – 2025 · Madrid · Streaming operations</p>
+              <p class="card-text">
+                2–3 líneas con tu impacto principal: liderazgo de operaciones, diseño de
+                procesos, coordinación global, mejoras de SLA, etc.
+              </p>
+              <div class="chips">
+                <span class="chip">Process design</span>
+                <span class="chip">Troubleshooting</span>
+                <span class="chip">Stakeholder management</span>
+              </div>
+            </article>
+
+            <!-- Card 2 (otro trabajo) -->
+            <article class="card">
+              <h3 class="card-title">Role / Company</h3>
+              <p class="card-meta">Año – Año · Ciudad · Industria</p>
+              <p class="card-text">
+                De nuevo 2–3 líneas con lo más relevante para el tipo de trabajo que buscas
+                ahora, no todo el histórico.
+              </p>
+              <div class="chips">
+                <span class="chip">Keyword 1</span>
+                <span class="chip">Keyword 2</span>
+              </div>
+            </article>
+
+            <!-- Añade más cards según necesites -->
+          </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section">
+          <h2 class="section-title">Selected Projects</h2>
+          <div class="grid grid-2">
+            <article class="card">
+              <h3 class="card-title">Project / Initiative Name</h3>
+              <p class="card-meta">Role · 2024</p>
+              <p class="card-text">
+                2–3 frases explicando situación, tu rol y el impacto (mejor si añades datos:
+                % mejora, reducción de tiempos, etc.).
+              </p>
+              <div class="chips">
+                <span class="chip">Process improvement</span>
+                <span class="chip">Global alignment</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3 class="card-title">Another Project</h3>
+              <p class="card-meta">Role · 2023</p>
+              <p class="card-text">
+                Usa el mismo formato para mantener consistencia visual y narrativa.
+              </p>
+              <div class="chips">
+                <span class="chip">Training</span>
+                <span class="chip">Knowledge sharing</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+          <h2 class="section-title">Contact</h2>
+          <div class="card">
+            <p class="card-text">
+              Ready to connect for roles in project management, operations or streaming
+              platforms.
+            </p>
+            <div class="chips" style="margin-top: 1rem;">
+              <a class="chip" href="mailto:tu-email@ejemplo.com">Email</a>
+              <a class="chip" href="https://www.linkedin.com/in/tu-perfil" target="_blank">LinkedIn</a>
+              <a class="chip" href="https://github.com/tu-usuario" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Tu Nombre.</span>
+        <div class="footer-links">
+          <span>Built on GitHub Pages</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Año automático en el footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
