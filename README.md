@@ -1,6 +1,7 @@
+<div class="module">
 # Jean Paul Angulo  
 **Project Manager · Operational Excellence · Streaming Operations**
-
+</div>
 Madrid, Spain · Bilingual ES/EN  
 Email: **jeanpaulangulo@gmail.com** · [LinkedIn](https://www.linkedin.com/in/jeanpaulangulo/)
 
