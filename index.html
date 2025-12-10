@@ -78,6 +78,19 @@
       padding: 0 16px 48px;
     }
 
+    /* ========= TITLES IN HELVETICA & UPPERCASE ========= */
+
+    .title,
+    .role-tag,
+    .section-heading,
+    .skills-block-title,
+    .project-card h3,
+    .contact-title {
+      font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
     /* ========= STICKY TOP NAV ========= */
 
     .top-nav {
@@ -146,11 +159,10 @@
     }
 
     .title {
-      font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
       font-size: 3.2rem;
       font-weight: 800;
       margin: 0 0 14px;
-      letter-spacing: -0.02em;
+      letter-spacing: 0.12em; /* un poco más amplio para el nombre */
     }
 
     .role-tag {
@@ -159,10 +171,9 @@
       color: #2d3c7a;
       padding: 10px 28px;
       border-radius: 999px;
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 600;
       margin-bottom: 20px;
-      letter-spacing: 0.03em;
     }
 
     .subtitle {
@@ -253,13 +264,11 @@
     /* ========= SECTION HEADING (shared) ========= */
 
     .section-heading {
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin: 0 0 20px;
       color: var(--muted);
       text-align: center;
-      text-transform: uppercase;
       font-weight: 700;
-      letter-spacing: 0.08em;
     }
 
     /* ========= PROJECTS GRID ========= */
@@ -324,7 +333,7 @@
 
     .project-card h3 {
       margin: 0 0 6px;
-      font-size: 1.02rem;
+      font-size: 0.95rem;
     }
 
     .tagline {
@@ -381,8 +390,8 @@
       top: 10px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: #3a4a96;
       background: #e4e8ff;
@@ -483,14 +492,12 @@
 
     .skills-block-title {
       font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
       margin: 18px 0 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
+      color: var(--muted);
     }
 
     .skills-text {
@@ -502,6 +509,7 @@
 
     .skills-icon {
       font-size: 0.95rem;
+      text-transform: none; /* para que el emoji no se vea afectado */
     }
 
     .skill-tags {
@@ -538,9 +546,9 @@
     }
 
     .contact-title {
-      font-size: 1.1rem;
-      font-weight: 600;
+      font-size: 0.95rem;
       margin-bottom: 8px;
+      color: var(--text);
     }
 
     .contact-text {
@@ -606,7 +614,7 @@
     <h1 class="title">JEAN PAUL ANGULO</h1>
 
     <span class="role-tag">
-      Project Manager · Operational Excellence · Streaming Operations
+      PROJECT MANAGER · OPERATIONAL EXCELLENCE · STREAMING OPERATIONS
     </span>
 
     <p class="subtitle">
@@ -673,7 +681,7 @@
 
             <!-- PROJECT 1 -->
             <article class="project-card top-project">
-              <h3>Global Audit the Auditor (ATA) Program</h3>
+              <h3>GLOBAL AUDIT THE AUDITOR (ATA) PROGRAM</h3>
               <p class="tagline">Prime Video · Quality Systems</p>
               <p class="impact-line">Cut QA blind spots and increased audit consistency across sites.</p>
               <p class="project-summary">
@@ -689,7 +697,7 @@
 
             <!-- PROJECT 2 -->
             <article class="project-card top-project">
-              <h3>Global QA Framework – Unified Audit System</h3>
+              <h3>GLOBAL QA FRAMEWORK – UNIFIED AUDIT SYSTEM</h3>
               <p class="tagline">Prime Video · Multi-Site Operations</p>
               <p class="impact-line">Created one QA methodology used across regions.</p>
               <p class="project-summary">
@@ -705,7 +713,7 @@
 
             <!-- PROJECT 3 -->
             <article class="project-card top-project">
-              <h3>Support Excellence & Ticketing Workflow Integration</h3>
+              <h3>SUPPORT EXCELLENCE & TICKETING WORKFLOW INTEGRATION</h3>
               <p class="tagline">Prime Video · Troubleshooting & PS</p>
               <p class="impact-line">Reduced friction between ticket streams and improved partner experience.</p>
               <p class="project-summary">
@@ -733,7 +741,7 @@
       <div class="project-grid-more">
 
         <article class="project-card secondary-project">
-          <h3>Global Performance Calibration System</h3>
+          <h3>GLOBAL PERFORMANCE CALIBRATION SYSTEM</h3>
           <p class="tagline">People & Performance</p>
           <p class="impact-line">Introduced structured SME calibration criteria.</p>
           <p class="project-summary">Helped design a global performance model.</p>
@@ -745,7 +753,7 @@
         </article>
 
         <article class="project-card secondary-project">
-          <h3>TVOD Account Management – Madrid</h3>
+          <h3>TVOD ACCOUNT MANAGEMENT – MADRID</h3>
           <p class="tagline">Ownership & Tooling</p>
           <p class="impact-line">Centralized TVOD partner and workflow visibility.</p>
           <p class="project-summary">Implemented a tracker for priorities and blockers.</p>
@@ -757,7 +765,7 @@
         </article>
 
         <article class="project-card secondary-project">
-          <h3>Partner Support: Redelivery Onboard</h3>
+          <h3>PARTNER SUPPORT: REDELIVERY ONBOARD</h3>
           <p class="tagline">Workflow Integration</p>
           <p class="impact-line">Created unified structures for partner communication.</p>
           <p class="project-summary">Aligned internal and partner-facing flows.</p>
@@ -769,7 +777,7 @@
         </article>
 
         <article class="project-card secondary-project">
-          <h3>Error Taxonomy Redesign</h3>
+          <h3>ERROR TAXONOMY REDESIGN</h3>
           <p class="tagline">Data Quality</p>
           <p class="impact-line">Improved reporting and RCA consistency.</p>
           <p class="project-summary">Reworked vague categories into actionable taxonomy.</p>
@@ -781,7 +789,7 @@
         </article>
 
         <article class="project-card secondary-project">
-          <h3>Metadata Corrections Pilot (ATM)</h3>
+          <h3>METADATA CORRECTIONS PILOT (ATM)</h3>
           <p class="tagline">Pilot & Automation</p>
           <p class="impact-line">Streamlined metadata correction routing.</p>
           <p class="project-summary">Helped define pilot use cases and success metrics.</p>
@@ -793,7 +801,7 @@
         </article>
 
         <article class="project-card secondary-project">
-          <h3>Workload Allocation Optimization</h3>
+          <h3>WORKLOAD ALLOCATION OPTIMIZATION</h3>
           <p class="tagline">Capacity Planning</p>
           <p class="impact-line">Balanced high-complexity troubleshooting work.</p>
           <p class="project-summary">Helped structure ATM assignment logic.</p>
@@ -805,7 +813,7 @@
         </article>
 
         <article class="project-card secondary-project">
-          <h3>Exceeding Ticket Resolution KPIs</h3>
+          <h3>EXCEEDING TICKET RESOLUTION KPIS</h3>
           <p class="tagline">Performance & QA</p>
           <p class="impact-line">Consistently surpassed quality and timing targets.</p>
           <p class="project-summary">Combined volume + quality + ownership.</p>
@@ -817,7 +825,7 @@
         </article>
 
         <article class="project-card secondary-project">
-          <h3>Standardizing QA Across Regions</h3>
+          <h3>STANDARDIZING QA ACROSS REGIONS</h3>
           <p class="tagline">Global Alignment</p>
           <p class="impact-line">Unified expectations across multi-site troubleshooting.</p>
           <p class="project-summary">Supported the creation of shared QA guidelines.</p>
@@ -841,7 +849,7 @@
         <div class="skills-module-inner">
 
           <p class="skills-block-title">
-            <span class="skills-icon">⭐</span> Core Skills
+            <span class="skills-icon">⭐</span> CORE SKILLS
           </p>
           <p class="skills-text small">
             Project Management · Operational Excellence · Continuous Improvement · Stakeholder Alignment · 
@@ -857,7 +865,7 @@
           </div>
 
           <p class="skills-block-title">
-            <span class="skills-icon">🌐</span> Domains
+            <span class="skills-icon">🌐</span> DOMAINS
           </p>
           <p class="skills-text small">
             Streaming & OTT · Digital Content Operations · Media Supply Chain · QA & Calibration · 
@@ -872,7 +880,7 @@
           </div>
 
           <p class="skills-block-title">
-            <span class="skills-icon">🛠</span> Tools
+            <span class="skills-icon">🛠</span> TOOLS
           </p>
           <p class="skills-text small">
             Excel (advanced) · Airtable · Jira · Salesforce · Asana · Slack Workflows · SharePoint
@@ -896,7 +904,7 @@
     <!-- CONTACT -->
     <section id="contact" class="contact-section">
       <aside class="module contact-module">
-        <p class="contact-title">Let’s work together</p>
+        <p class="contact-title">LET’S WORK TOGETHER</p>
         <p class="contact-text">
           If you’re looking for a project & operations lead to strengthen streaming workflows, QA systems or global troubleshooting,
           I’d be happy to connect.
