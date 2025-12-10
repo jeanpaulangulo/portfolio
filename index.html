@@ -62,25 +62,54 @@
       margin: 0 auto;
     }
 
-    /* HEADER centrado, sin tarjeta */
+    /* ----------- HERO HEADER (VERSION C) ----------- */
+
     .header-card {
-      padding: 0 4px 8px;
-      margin: 0 auto 16px;
+      padding: 70px 16px 80px;
+      margin: 0 auto 50px;
       text-align: center;
-      animation: fadeUp 0.5s ease-out forwards;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.72),
+          rgba(245, 247, 255, 0.45)
+        ),
+        rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+
+      border-radius: 22px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+
+      animation: fadeUp 0.6s ease-out forwards;
       opacity: 0;
       transform: translateY(16px);
     }
 
     .title {
-      font-size: 2.4rem;
-      margin: 0 0 6px;
+      font-size: 3rem;
+      font-weight: 800;
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .role-tag {
+      display: inline-block;
+      background: #e6ecff;
+      color: #2d3c7a;
+      padding: 10px 28px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: 0.03em;
     }
 
     .subtitle {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       color: var(--muted);
-      margin: 0 0 14px;
+      margin: 0 0 16px;
     }
 
     .meta {
@@ -124,6 +153,7 @@
     }
 
     /* ABOUT centrado, separado del resto, sin tarjeta */
+
     .about-section {
       padding: 16px 4px 24px;
       margin: 10px auto 40px;
@@ -241,7 +271,6 @@
       transform-origin: center center;
     }
 
-    /* HOVER expansivo más lento y suave */
     .project-card:hover {
       transform: translateY(-6px) scale(1.10);
       box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
@@ -355,16 +384,26 @@
 </head>
 <body>
   <main class="page">
-    <!-- HEADER centrado -->
+    <!-- HERO HEADER -->
     <header class="header-card">
       <h1 class="title">Jean Paul Angulo</h1>
-      <p class="subtitle">Project Manager · Operational Excellence · Streaming Operations</p>
+
+      <!-- ROLE TAG HERO -->
+      <span class="role-tag">
+        Project Manager · Operational Excellence · Streaming Operations
+      </span>
+
+      <p class="subtitle">
+        Designing scalable workflows, reducing operational friction, and aligning global teams across streaming ecosystems.
+      </p>
+
       <div class="meta">
         <span>Madrid, Spain</span>
         <span>Bilingual ES/EN</span>
         <span><a href="mailto:jeanpaulangulo@gmail.com">jeanpaulangulo@gmail.com</a></span>
         <span><a href="<your-linkedin-url>" target="_blank" rel="noopener">LinkedIn</a></span>
       </div>
+
       <div class="pill-row">
         <div class="pill">Process Optimization</div>
         <div class="pill">Global Workflows</div>
@@ -375,9 +414,10 @@
       </div>
     </header>
 
-    <!-- ABOUT centrado, versión data-driven anterior -->
+    <!-- ABOUT centrado, data-driven -->
     <section class="about-section">
-      <h1 class="section-title">About Me</h1>
+      <p class="section-label">About</p>
+      <h2 class="section-title">About Me</h2>
       <p class="small">
         Project Manager and Operations Lead with 10+ years of experience in streaming, digital media and global operations
         (Amazon Prime Video, Disney+, Paramount+, DAZN, Fox Networks, Antena 3). I specialize in
@@ -615,7 +655,7 @@
         </div>
         <ul class="clean small">
           <li>Email: <a href="mailto:jeanpaulangulo@gmail.com">jeanpaulangulo@gmail.com</a></li>
-          <li>LinkedIn: <a href="<your-linkedin-url>" target="_blank" rel="noopener">https://www.linkedin.com/in/jeanpaulangulo/</a></li>
+          <li>LinkedIn: <a href="<your-linkedin-url>" target="_blank" rel="noopener"><your-linkedin-url></a></li>
         </ul>
       </aside>
     </section>
