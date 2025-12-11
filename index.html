@@ -2,2444 +2,977 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Jean Paul Angulo · Project & Operations Lead</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jean Paul Angulo – Project & Operations Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO / DESCRIPTION -->
+  <meta name="description" content="Project Manager & Operations Lead specialized in streaming, digital media and global workflows. Portfolio of projects in Amazon Prime Video and other media companies." />
+
+  <!-- Open Graph / LinkedIn / Social Preview -->
+  <meta property="og:title" content="Jean Paul Angulo – Project & Operations Portfolio" />
+  <meta property="og:description" content="Project & Operations lead focused on scalable workflows, QA systems and global troubleshooting for streaming platforms." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jeanpaulangulo.github.io/portfolio/" />
+
   <style>
     :root {
-      --bg: #050509;
-      --bg-elevated: #0a0b10;
-      --bg-elevated-soft: #0d1018;
-      --primary: #7dd3fc;
-      --primary-soft: rgba(125, 211, 252, 0.16);
-      --accent: #a855f7;
-      --accent-soft: rgba(168, 85, 247, 0.16);
-      --accent-strong: #f97316;
-      --accent-strong-soft: rgba(249, 115, 22, 0.2);
-      --text-main: #f9fafb;
-      --text-muted: #9ca3af;
-      --text-soft: #6b7280;
-      --border-subtle: rgba(148, 163, 184, 0.2);
-      --shadow-soft: 0 22px 60px rgba(15, 23, 42, 0.75);
-      --shadow-subtle: 0 18px 50px rgba(15, 23, 42, 0.6);
+      --bg: #f5f5f5;
+      --card-bg: #ffffff;
+      --accent: #0366d6;
+      --text: #1f1f1f;
+      --muted: #6b6b6b;
+      --border: #e5e5e5;
+      --radius: 16px;
+      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --heading-underline: #c3cbff;
     }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #020617, #02010a 55%, #000 100%);
-      color: var(--text-main);
+    html {
       scroll-behavior: smooth;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
+    body {
+      margin: 0;
+      padding: 56px 0 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
       background:
-        radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.08), transparent 55%),
-        radial-gradient(circle at 80% 10%, rgba(168, 85, 247, 0.04), transparent 55%),
-        radial-gradient(circle at 50% 100%, rgba(249, 115, 22, 0.03), transparent 60%);
-      mix-blend-mode: screen;
-      opacity: 0.7;
-      z-index: -2;
+        radial-gradient(circle at 20% 20%, rgba(150,170,255,0.12), transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(100,130,255,0.10), transparent 60%),
+        #f5f7ff;
+      animation: bgPulse 22s ease-in-out infinite;
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image: linear-gradient(
-          rgba(15, 23, 42, 0.6),
-          rgba(15, 23, 42, 0.92)
-        ),
-        repeating-linear-gradient(
-          0deg,
-          transparent,
-          transparent 2px,
-          rgba(15, 23, 42, 0.85) 2px,
-          rgba(15, 23, 42, 0.85) 4px
-        );
-      mix-blend-mode: multiply;
-      pointer-events: none;
-      z-index: -3;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 32px auto 80px;
-      padding: 0 24px 24px;
-    }
-
-    @media (max-width: 768px) {
-      main {
-        margin-top: 20px;
-        padding: 0 16px 32px;
-      }
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border-radius: 999px;
-      padding: 6px 10px 6px 6px;
-      background: radial-gradient(circle at 0 0, #38bdf8 0, #3b0764 40%, #020617 90%);
-      border: 1px solid rgba(56, 189, 248, 0.5);
-      box-shadow:
-        0 0 0 1px rgba(15, 23, 42, 0.75),
-        0 10px 40px rgba(8, 47, 73, 0.9);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #e5f6ff;
-      margin-bottom: 18px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .badge::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        circle at 0 0,
-        rgba(248, 250, 252, 0.25),
-        transparent 55%
-      );
-      opacity: 0.6;
-      mix-blend-mode: screen;
-    }
-
-    .badge-icon {
-      height: 22px;
-      width: 22px;
-      border-radius: 999px;
-      background:
-        conic-gradient(
-          from 140deg,
-          #38bdf8,
-          #a855f7,
-          #f97316,
-          #38bdf8
-        );
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      box-shadow:
-        0 0 0 1px rgba(15, 23, 42, 0.9),
-        0 10px 30px rgba(8, 47, 73, 0.9);
-    }
-
-    .badge-icon-inner {
-      height: 17px;
-      width: 17px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #e0f2fe, #0f172a 70%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      box-shadow:
-        inset 0 0 0 1px rgba(148, 163, 184, 0.15),
-        0 0 15px rgba(129, 140, 248, 0.3);
-    }
-
-    .badge-label {
-      position: relative;
-      z-index: 1;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .badge-pulse {
-      position: absolute;
-      inset: -15px;
-      border-radius: inherit;
-      background: radial-gradient(
-        circle at 0 0,
-        rgba(56, 189, 248, 0.2),
-        transparent 55%
-      );
-      mix-blend-mode: screen;
-      opacity: 0;
-      animation: badgePulse 3s infinite;
-    }
-
-    @keyframes badgePulse {
-      0%,
-      100% {
-        opacity: 0.14;
-        transform: scale(1);
+    @keyframes bgPulse {
+      0% {
+        background:
+          radial-gradient(circle at 20% 20%, rgba(150,170,255,0.12), transparent 60%),
+          radial-gradient(circle at 80% 80%, rgba(100,130,255,0.10), transparent 60%),
+          #f5f7ff;
       }
       50% {
-        opacity: 0.25;
-        transform: scale(1.03);
+        background:
+          radial-gradient(circle at 22% 22%, rgba(150,170,255,0.16), transparent 63%),
+          radial-gradient(circle at 78% 78%, rgba(100,130,255,0.13), transparent 63%),
+          #f5f7ff;
+      }
+      100% {
+        background:
+          radial-gradient(circle at 20% 20%, rgba(150,170,255,0.12), transparent 60%),
+          radial-gradient(circle at 80% 80%, rgba(100,130,255,0.10), transparent 60%),
+          #f5f7ff;
       }
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
-      gap: 26px;
-      align-items: flex-start;
-      margin-bottom: 32px;
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px 48px;
     }
 
-    @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
-        gap: 18px;
-      }
-    }
+    /* TITLES IN HELVETICA & UPPERCASE */
 
-    @media (max-width: 768px) {
-      .hero-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .hero-main-card {
-      background: linear-gradient(
-          135deg,
-          rgba(15, 23, 42, 0.9),
-          rgba(15, 23, 42, 0.98)
-        ),
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 60%),
-        radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.15), transparent 60%);
-      border-radius: 24px;
-      padding: 22px 22px 20px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      position: relative;
-      overflow: hidden;
-      box-shadow:
-        0 24px 70px rgba(15, 23, 42, 0.85),
-        0 0 0 1px rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(26px);
-    }
-
-    @media (max-width: 768px) {
-      .hero-main-card {
-        padding: 18px 16px 18px;
-      }
-    }
-
-    .hero-main-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background-image:
-        radial-gradient(circle at 10% 0, rgba(56, 189, 248, 0.25), transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.23), transparent 55%),
-        radial-gradient(circle at 50% 100%, rgba(248, 250, 252, 0.12), transparent 55%);
-      opacity: 0.6;
-      mix-blend-mode: soft-light;
-      z-index: -1;
-    }
-
-    .hero-tagline {
-      font-size: 13px;
-      letter-spacing: 0.18em;
+    .title,
+    .role-tag,
+    .section-heading,
+    .skills-block-title,
+    .project-card h3,
+    .contact-title {
+      font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
       text-transform: uppercase;
-      color: var(--text-soft);
-      margin-bottom: 6px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      letter-spacing: 0.08em;
     }
 
-    .hero-tagline-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #bbf7d0, #16a34a);
-      box-shadow:
-        0 0 0 4px rgba(22, 163, 74, 0.12),
-        0 0 18px rgba(34, 197, 94, 0.9);
-    }
+    /* NAV */
 
-    .hero-title-row {
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 56px;
       display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 4px;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      padding: 0 16px;
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      z-index: 200;
     }
 
-    .hero-name {
-      font-size: clamp(28px, 4vw, 34px);
-      font-weight: 650;
-      letter-spacing: 0.03em;
+    .top-nav a {
+      font-size: 0.85rem;
       text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
     }
 
-    .hero-role {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-soft);
-      padding-top: 4px;
-      white-space: nowrap;
+    .top-nav a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-1px);
     }
 
     @media (max-width: 600px) {
-      .hero-title-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
+      .top-nav {
+        gap: 16px;
+      }
+      .top-nav a {
+        font-size: 0.75rem;
       }
     }
 
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 14px;
-      margin: 10px 0 14px;
-      font-size: 12px;
-      color: var(--text-soft);
+    /* HERO */
+
+    .header-hero {
+      width: 100%;
+      padding: 80px 24px 72px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(255,255,255,0.78), rgba(245,247,255,0.58));
+      background-attachment: fixed;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
 
-    .hero-meta-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 3px 9px;
+    .title {
+      font-size: 3.2rem;
+      font-weight: 800;
+      margin: 0 0 14px;
+      letter-spacing: 0.12em;
+    }
+
+    .role-tag {
+      display: inline-block;
+      background: #e6ecff;
+      color: #2d3c7a;
+      padding: 10px 28px;
       border-radius: 999px;
-      background: radial-gradient(circle at 0 0, #020617, #020617 45%, #0b1220 100%);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      box-shadow:
-        0 0 0 1px rgba(15, 23, 42, 0.9),
-        0 9px 24px rgba(15, 23, 42, 0.8);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 20px;
     }
 
-    .hero-meta-label {
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 10px;
-      color: #9ca3af;
+    .subtitle {
+      font-size: 1.24rem;
+      color: var(--muted);
+      margin: 0 0 18px;
+      max-width: 880px;
+      line-height: 1.5;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .hero-meta-divider {
-      width: 1px;
-      height: 10px;
-      background: linear-gradient(
-        to bottom,
-        rgba(148, 163, 184, 0.1),
-        rgba(148, 163, 184, 0.7),
-        rgba(148, 163, 184, 0.1)
-      );
-    }
-
-    .hero-summary {
-      font-size: 13px;
-      line-height: 1.6;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    .hero-summary strong {
-      color: #e5e7eb;
-    }
-
-    .hero-meta-secondary {
+    .meta {
+      font-size: 0.92rem;
+      color: var(--muted);
       display: flex;
       flex-wrap: wrap;
-      gap: 8px 16px;
-      margin-bottom: 12px;
-      font-size: 12px;
-      color: var(--text-soft);
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 14px;
     }
 
-    .hero-meta-secondary span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+    .meta span::before { content: "• "; }
+
+    a { color: var(--accent); text-decoration: none; }
+
+    .meta a {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
     }
 
-    .hero-meta-secondary span::before {
-      content: "•";
-      color: rgba(148, 163, 184, 0.7);
-      font-size: 14px;
-    }
-
-    .hero-meta-secondary strong {
-      font-weight: 600;
-      color: var(--text-muted);
+    .meta a:hover {
+      color: #024ea7;
+      border-color: #024ea7;
     }
 
     .pill-row {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      justify-content: flex-start;
-      margin: 4px 0 0;
+      justify-content: center;
+      margin-top: 10px;
     }
 
     .pill {
-      display: inline-flex;
-      align-items: center;
+      font-size: 0.8rem;
+      padding: 4px 10px;
       border-radius: 999px;
-      padding: 5px 10px 5px 8px;
-      font-size: 11px;
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      background: radial-gradient(
-        circle at 0 0,
-        rgba(15, 23, 42, 0.9),
-        rgba(15, 23, 42, 0.96)
-      );
-      color: #d1d5db;
-      box-shadow:
-        0 0 0 1px rgba(15, 23, 42, 1),
-        0 10px 30px rgba(15, 23, 42, 0.9);
-      position: relative;
-      overflow: hidden;
-      gap: 6px;
+      border: 1px solid var(--border);
+      background: #fafafa;
+      color: var(--muted);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
 
-    .pill::before {
-      content: "";
-      position: absolute;
-      top: -90%;
-      left: -30%;
-      width: 140%;
-      height: 280%;
-      background: radial-gradient(
-        circle at 0 0,
-        rgba(56, 189, 248, 0.2),
-        transparent 60%
-      );
-      opacity: 0.7;
-      mix-blend-mode: soft-light;
-    }
-
-    .pill span {
-      position: relative;
-      z-index: 1;
-    }
-
-    .pill::after {
-      content: "";
-      position: relative;
-      z-index: 1;
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #bae6fd, #0ea5e9);
-      box-shadow:
-        0 0 0 3px rgba(56, 189, 248, 0.2),
-        0 0 14px rgba(56, 189, 248, 0.85);
-      margin-left: 2px;
-    }
-
-    .hero-right-card {
-      background: radial-gradient(circle at top left, #020617, #020617 55%, #020617);
-      border-radius: 24px;
-      padding: 16px 16px 14px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      position: relative;
-      overflow: hidden;
-      box-shadow:
-        0 22px 60px rgba(15, 23, 42, 0.9),
-        0 0 0 1px rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(18px);
-    }
-
-    @media (max-width: 768px) {
-      .hero-right-card {
-        padding: 14px 14px 18px;
-      }
-    }
-
-    .hero-right-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background-image:
-        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.2), transparent 55%),
-        radial-gradient(circle at 120% 0, rgba(248, 250, 252, 0.15), transparent 60%),
-        radial-gradient(circle at 0 120%, rgba(30, 64, 175, 0.25), transparent 65%);
-      mix-blend-mode: soft-light;
-      opacity: 0.7;
-      z-index: -1;
-    }
-
-    .vp-label {
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-      margin-bottom: 8px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .vp-label-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #bfdbfe, #3b82f6);
-      box-shadow:
-        0 0 0 4px rgba(59, 130, 246, 0.18),
-        0 0 18px rgba(59, 130, 246, 0.95);
-    }
-
-    .vp-main {
-      border-radius: 18px;
-      padding: 12px 12px 10px;
-      background: radial-gradient(
-          circle at 0 0,
-          rgba(15, 23, 42, 0.9),
-          rgba(15, 23, 42, 1)
-        ),
-        radial-gradient(circle at 100% 0, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 1));
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow:
-        0 18px 45px rgba(15, 23, 42, 0.95),
-        0 0 0 1px rgba(15, 23, 42, 0.95);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .vp-main::before {
-      content: "";
-      position: absolute;
-      inset: -30%;
-      background:
-        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.2), transparent 60%),
-        radial-gradient(circle at 100% 0, rgba(168, 85, 247, 0.18), transparent 60%),
-        radial-gradient(circle at 50% 100%, rgba(251, 191, 36, 0.22), transparent 60%);
-      opacity: 0.7;
-      mix-blend-mode: soft-light;
-    }
-
-    .vp-main-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .vp-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .vp-title-block h2 {
-      font-size: 15px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin: 0 0 4px;
-    }
-
-    .vp-title-block p {
-      font-size: 12px;
-      margin: 0;
-      color: var(--text-soft);
-    }
-
-    .vp-stats {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .vp-pill-primary {
-      border-radius: 999px;
-      padding: 5px 10px;
-      font-size: 11px;
-      border: 1px solid rgba(96, 165, 250, 0.8);
-      background: radial-gradient(circle at 0 0, #0b1120, #020617);
-      color: #e5f2ff;
-      box-shadow:
-        0 0 0 1px rgba(15, 23, 42, 0.9),
-        0 12px 25px rgba(15, 23, 42, 0.9);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .vp-pill-primary::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        circle at 0 0,
-        rgba(59, 130, 246, 0.35),
-        transparent 60%
-      );
-      opacity: 0.9;
-      mix-blend-mode: soft-light;
-    }
-
-    .vp-pill-primary span {
-      position: relative;
-      z-index: 1;
-    }
-
-    .vp-pill-secondary {
-      border-radius: 999px;
-      padding: 3px 8px;
-      font-size: 11px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: radial-gradient(circle at 0 0, #020617, #020617);
-      color: var(--text-muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.9);
-    }
-
-    .vp-pill-secondary-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #fee2e2, #ef4444);
-      box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.2);
-    }
-
-    .vp-stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    @media (max-width: 480px) {
-      .vp-stats-row {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    .vp-metric-card {
-      border-radius: 12px;
-      padding: 7px 8px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: radial-gradient(
-        circle at 0 0,
-        rgba(15, 23, 42, 0.95),
-        rgba(15, 23, 42, 1)
-      );
-      box-shadow:
-        0 0 0 1px rgba(15, 23, 42, 1),
-        0 14px 28px rgba(15, 23, 42, 0.9);
-      font-size: 11px;
-    }
-
-    .vp-metric-label {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-
-    .vp-metric-value {
-      font-size: 13px;
-      font-weight: 600;
-      color: #e5e7eb;
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-    }
-
-    .vp-metric-trend {
-      font-size: 10px;
-      color: #4ade80;
-    }
-
-    .vp-metric-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 2px 6px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.65);
-      background: linear-gradient(to right, #020617, #020617);
-      color: #9ca3af;
-      font-size: 10px;
-      margin-top: 4px;
-    }
-
-    .vp-metric-dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #a5b4fc, #4f46e5);
-    }
-
-    .vp-focus {
-      border-radius: 14px;
-      padding: 9px 9px 7px;
-      margin-bottom: 10px;
-      background: linear-gradient(
-          145deg,
-          rgba(30, 64, 175, 0.6),
-          rgba(15, 23, 42, 0.98)
-        ),
-        radial-gradient(circle at 0 0, rgba(30, 64, 175, 0.5), transparent 65%);
-      border: 1px solid rgba(129, 140, 248, 0.7);
-      box-shadow:
-        0 0 0 1px rgba(15, 23, 42, 1),
-        0 20px 40px rgba(15, 23, 42, 0.95);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .vp-focus::before {
-      content: "";
-      position: absolute;
-      inset: -50%;
-      background:
-        radial-gradient(circle at 0 0, rgba(191, 219, 254, 0.2), transparent 60%),
-        radial-gradient(circle at 100% 0, rgba(129, 140, 248, 0.28), transparent 65%);
-      mix-blend-mode: screen;
-      opacity: 0.85;
-    }
-
-    .vp-focus-content {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      font-size: 12px;
-      color: #e5edff;
-    }
-
-    .vp-focus-label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #bfdbfe;
-      margin-bottom: 2px;
-    }
-
-    .vp-focus-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(191, 219, 254, 0.6);
-      background: radial-gradient(circle at 0 0, #1d283a, #020617);
-      font-size: 10px;
-      color: #dbeafe;
-      margin-bottom: 6px;
-    }
-
-    .vp-focus-pill-icon {
-      width: 13px;
-      height: 13px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #fee2e2, #ef4444);
-      box-shadow:
-        0 0 0 3px rgba(248, 113, 113, 0.25),
-        0 0 18px rgba(248, 113, 113, 0.9);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 9px;
-    }
-
-    .vp-focus-text strong {
-      color: #e5edff;
-    }
-
-    .vp-focus-list {
-      margin: 6px 0 0;
-      padding-left: 14px;
-      font-size: 11px;
-      color: #c7d2fe;
-    }
-
-    .vp-focus-list li {
-      margin-bottom: 2px;
-    }
-
-    .vp-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-      margin-top: 8px;
-      font-size: 11px;
-      color: var(--text-soft);
-    }
-
-    .vp-footer span strong {
-      color: #e5e7eb;
-    }
-
-    .vp-footer a {
-      color: #93c5fd;
-      text-decoration: none;
-      border-bottom: 1px dotted rgba(147, 197, 253, 0.6);
-    }
-
-    .vp-footer a:hover {
-      color: #bfdbfe;
-      border-bottom-style: solid;
-    }
-
-    .vp-footer-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: radial-gradient(circle at 0 0, #020617, #020617);
-      font-size: 10px;
-      color: var(--text-soft);
-    }
-
-    .meta-list {
-      list-style: none;
-      padding: 0;
-      margin: 8px 0 10px;
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .meta-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 4px;
-    }
-
-    .meta-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      margin-top: 4px;
-      background: radial-gradient(circle at 30% 0, #a5b4fc, #4f46e5);
-      box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.35);
-      flex-shrink: 0;
-    }
-
-    .meta-list strong {
-      color: var(--text-muted);
-    }
-
-    .meta-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      font-size: 11px;
-      color: var(--text-soft);
-      margin-top: 8px;
-    }
-
-    .meta-footer a {
-      color: #93c5fd;
-      text-decoration: none;
-      border-bottom: 1px dotted rgba(148, 163, 184, 0.6);
-    }
-
-    .meta-footer a:hover {
-      color: #bfdbfe;
-      border-bottom-style: solid;
-    }
-
-    .meta-location {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .meta-location-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #bbf7d0, #16a34a);
-      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+    .pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      background: #ffffff;
     }
 
     .scroll-indicator {
-      margin-top: 16px;
-      text-align: center;
-      font-size: 11px;
+      margin-top: 32px;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--text-soft);
+      color: var(--muted);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
-    }
-
-    .scroll-indicator-arrow {
-      font-size: 14px;
-      color: rgba(148, 163, 184, 0.85);
-      animation: scrollPulse 1.4s infinite;
-    }
-
-    @keyframes scrollPulse {
-      0% {
-        transform: translateY(0);
-        opacity: 0.6;
-      }
-      50% {
-        transform: translateY(3px);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 0.6;
-      }
-    }
-
-    .section-divider {
-      height: 1px;
-      margin: 26px auto 18px;
-      max-width: 720px;
-      position: relative;
-      background: linear-gradient(
-        to right,
-        transparent,
-        rgba(148, 163, 184, 0.45),
-        transparent
-      );
-    }
-
-    .section-divider::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 46px;
-      height: 18px;
-      transform: translate(-50%, -50%);
-      background:
-        radial-gradient(circle at 50% 0, rgba(148, 163, 184, 0.6), transparent 65%),
-        radial-gradient(circle at 0 100%, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 1));
-      border-radius: 999px;
+      gap: 4px;
       opacity: 0.85;
     }
 
-    .section-divider::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 2px;
-      height: 7px;
-      transform: translate(-50%, -50%);
-      background: linear-gradient(
-        to bottom,
-        rgba(148, 163, 184, 0.1),
-        rgba(248, 250, 252, 0.9),
-        rgba(148, 163, 184, 0.1)
-      );
-      border-radius: 999px;
-      box-shadow: 0 0 10px rgba(148, 163, 184, 0.7);
+    .scroll-indicator span {
+      font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
     }
 
-    .section-heading {
-      font-size: 12px;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-      margin: 0 0 14px;
+    .scroll-indicator-arrow {
+      font-size: 1.2rem;
+      animation: arrowBounce 1.4s ease-in-out infinite;
+    }
+
+    @keyframes arrowBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(4px); }
+    }
+
+    /* STRENGTHS SECTION */
+
+    .strengths-section {
+      margin: 22px auto 10px;
+      max-width: 960px;
+    }
+
+    .strengths-module {
       text-align: center;
+    }
+
+    .strengths-heading {
+      font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .strengths-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .strength-pill {
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #f3f4ff;
+      border: 1px solid #dde1ff;
+      color: #323a6d;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .strength-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+      background: #ffffff;
+    }
+
+    /* ABOUT */
+
+    .about-section {
+      padding: 26px 4px 30px;
+      margin: 20px auto 32px;
+      max-width: 850px;
+      text-align: center;
+    }
+
+    .small {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+      line-height: 1.55;
+    }
+
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #dce1ff, transparent);
+      margin: 20px 0 32px;
+    }
+
+    /* SECTION HEADING (centrado + subrayado animado) */
+    .section-heading {
+      font-size: 1rem;
+      margin: 0 auto 20px;
+      color: var(--muted);
+      text-align: center;
+      font-weight: 700;
       position: relative;
-      display: inline-block;
-      padding-bottom: 6px;
+      display: block;
+      letter-spacing: 0.10em;
     }
 
     .section-heading::after {
       content: "";
       position: absolute;
       left: 50%;
-      bottom: 0;
-      width: 120px;
-      height: 1px;
-      transform: translateX(-50%);
-      background: linear-gradient(
-        to right,
-        transparent,
-        rgba(148, 163, 184, 0.9),
-        transparent
-      );
-      box-shadow: 0 0 10px rgba(148, 163, 184, 0.7);
+      bottom: -6px;
+      width: 72px;
+      height: 2px;
+      background: var(--heading-underline);
+      border-radius: 999px;
+      transform: translateX(-50%) scaleX(0);
+      transform-origin: center;
+      transition: transform 0.45s ease-out;
     }
 
-    .section-heading.heading-visible {
-      margin-left: 50%;
-      transform: translateX(-50%);
+    .section-heading.heading-visible::after {
+      transform: translateX(-50%) scaleX(1);
     }
 
-    .projects-section {
-      margin-bottom: 26px;
+    /* SCROLL REVEAL */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.65s ease-out, transform 0.65s ease-out;
     }
 
-    .module {
-      background: radial-gradient(circle at top left, #020617, #020617 50%, #020617);
-      border-radius: 22px;
-      padding: 18px 18px 16px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow:
-        0 22px 60px rgba(15, 23, 42, 0.9),
-        0 0 0 1px rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(16px);
-      position: relative;
-      overflow: hidden;
-      max-width: 980px;
-      margin: 0 auto;
+    .reveal-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    @media (max-width: 768px) {
-      .module {
-        padding: 14px 12px;
-        border-radius: 18px;
-      }
-    }
-
-    .module::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background:
-        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.16), transparent 55%),
-        radial-gradient(circle at 100% 0, rgba(168, 85, 247, 0.18), transparent 60%);
-      opacity: 0.75;
-      mix-blend-mode: soft-light;
-      z-index: -1;
-    }
-
-    .projects-module-inner {
-      position: relative;
-      z-index: 1;
-    }
+    /* PROJECT GRIDS */
 
     .project-grid-top {
       display: grid;
-      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.25fr);
-      gap: 14px;
-      margin-top: 14px;
-      align-items: stretch;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 20px;
+      perspective: 1400px;
     }
 
     @media (max-width: 900px) {
       .project-grid-top {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: repeat(2, minmax(0,1fr));
       }
     }
 
-    .project-grid-rest {
+    @media (max-width: 700px) {
+      .project-grid-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .project-grid-more {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 20px;
+      margin-bottom: 40px;
     }
 
-    @media (max-width: 900px) {
-      .project-grid-rest {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 600px) {
-      .project-grid-rest {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
+    /* PROJECT CARDS */
 
     .project-card {
-      border-radius: 16px;
-      padding: 11px 11px 10px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: radial-gradient(circle at 0 0, #020617, #020617 60%, #030712);
-      box-shadow:
-        0 18px 35px rgba(15, 23, 42, 0.95),
-        0 0 0 1px rgba(15, 23, 42, 0.9);
-      font-size: 12px;
       position: relative;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 16px 16px 14px;
+      padding-top: 18px;
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+      cursor: default;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 6px;
+      transition:
+        transform 0.9s cubic-bezier(0.22, 0.11, 0.25, 1),
+        box-shadow 0.9s cubic-bezier(0.22, 0.11, 0.25, 1),
+        background 0.7s ease,
+        border-color 0.7s ease,
+        z-index 0.4s ease;
     }
 
     .project-card::before {
       content: "";
       position: absolute;
-      inset: -40%;
-      opacity: 0.8;
-      mix-blend-mode: soft-light;
-      background:
-        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.18), transparent 55%),
-        radial-gradient(circle at 100% 0, rgba(59, 130, 246, 0.2), transparent 60%),
-        radial-gradient(circle at 0 100%, rgba(30, 64, 175, 0.2), transparent 60%);
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #dde3ff;
     }
 
-    .project-card-inner {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      height: 100%;
+    .cat-quality::before {
+      background: linear-gradient(90deg, #5a7bff, #9c7dff);
+    }
+
+    .cat-ops::before {
+      background: linear-gradient(90deg, #34b3ff, #5a7bff);
+    }
+
+    .cat-workflow::before {
+      background: linear-gradient(90deg, #ffb347, #ff7b72);
+    }
+
+    .cat-people::before {
+      background: linear-gradient(90deg, #7cd992, #4fb4ff);
+    }
+
+    .cat-data::before {
+      background: linear-gradient(90deg, #ffc857, #ff8c42);
+    }
+
+    .cat-partner::before {
+      background: linear-gradient(90deg, #70c2ff, #9b9fff);
     }
 
     .project-category-label {
-      font-size: 10px;
+      font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-soft);
-      margin: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .project-category-label span {
+      color: #8a8fb3;
+      margin: 4px 0 6px;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 4px;
     }
 
-    .project-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: #e5e7eb;
-      margin: 2px 0 4px;
+    .cat-icon {
+      font-size: 0.9rem;
     }
 
-    .project-meta {
-      font-size: 11px;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-
-    .project-meta strong {
-      color: var(--text-muted);
-    }
-
-    .project-impact {
-      font-size: 11px;
-      color: #9ca3af;
-      margin: 0;
-    }
-
-    .project-impact strong {
-      color: #e5e7eb;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      margin-top: 6px;
-    }
-
-    .project-tag {
-      font-size: 10px;
+    .top-badge {
+      display: inline-block;
+      margin-top: 2px;
+      margin-bottom: 8px;
+      padding: 3px 10px;
+      background: #e4e8ff;
+      color: #3a4a96;
+      font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
       border-radius: 999px;
-      padding: 2px 7px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      color: #cbd5f5;
-      background: radial-gradient(circle at 0 0, #020617, #020617);
     }
 
-    .project-tag.impact {
-      border-color: rgba(52, 211, 153, 0.8);
-      color: #bbf7d0;
-      background: radial-gradient(circle at 0 0, rgba(22, 163, 74, 0.3), #022c22);
+    .project-card h3 {
+      margin: 0 0 6px;
+      font-size: 0.95rem;
     }
 
-    .project-tag.ops {
-      border-color: rgba(56, 189, 248, 0.8);
-      color: #e0f2fe;
-      background: radial-gradient(circle at 0 0, rgba(30, 64, 175, 0.3), #020617);
+    .tagline {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 8px;
     }
 
-    .project-tag.training {
-      border-color: rgba(236, 72, 153, 0.8);
-      color: #fce7f3;
-      background: radial-gradient(circle at 0 0, rgba(131, 24, 67, 0.3), #020617);
+    .impact-line {
+      font-size: 0.86rem;
+      margin-bottom: 6px;
     }
 
-    .project-tag.data {
-      border-color: rgba(96, 165, 250, 0.8);
-      color: #dbeafe;
-      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.9), #020617);
+    .impact-label {
+      font-family: "Helvetica", "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #7a81aa;
+      margin-right: 6px;
     }
 
-    .project-subtitle {
-      font-size: 11px;
-      color: var(--text-soft);
-      margin: 0 0 4px;
+    .impact-metrics {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    /* TOOLTIP FOR METRICS */
+
+    .impact-metrics[data-tooltip] {
+      position: relative;
+      cursor: help;
+    }
+
+    .impact-metrics[data-tooltip]::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: 50%;
+      bottom: 125%;
+      transform: translateX(-50%);
+      background: #111827;
+      color: #f9fafb;
+      padding: 6px 8px;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      opacity: 0;
+      pointer-events: none;
+      white-space: nowrap;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+      transition: opacity 0.18s ease-out, transform 0.18s ease-out;
+      z-index: 50;
+    }
+
+    .impact-metrics[data-tooltip]:hover::after {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-2px);
+    }
+
+    .project-summary {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 4px;
     }
 
     .project-details {
-      font-size: 11px;
-      color: #9ca3af;
-      margin: 0;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition:
+        max-height 0.8s ease,
+        opacity 0.6s ease,
+        margin-top 0.6s ease;
     }
 
-    .project-details strong {
-      color: #e5e7eb;
+    .project-details p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin: 6px 0;
     }
 
-    .project-link-row {
-      margin-top: 6px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 10px;
-      color: var(--text-soft);
+    .project-card:hover .project-details {
+      max-height: 520px;
+      opacity: 1;
+      margin-top: 10px;
     }
 
-    .project-link-row a {
-      color: #93c5fd;
-      text-decoration: none;
-      border-bottom: 1px dotted rgba(148, 163, 184, 0.6);
+    .top-project {
+      background: linear-gradient(180deg, #ffffff, #f6f7ff);
+      border-color: #ccd6ff;
+      transform-style: preserve-3d;
     }
 
-    .project-link-row a:hover {
-      color: #bfdbfe;
-      border-bottom-style: solid;
-    }
-
-    .project-scope {
-      font-size: 10px;
-      color: var(--text-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    .more-projects-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 1.65fr;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    @media (max-width: 900px) {
-      .more-projects-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .more-projects-list {
-      font-size: 11px;
-      color: #9ca3af;
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
-
-    .more-projects-list li {
-      margin-bottom: 3px;
-      display: flex;
-      align-items: flex-start;
-      gap: 6px;
-    }
-
-    .more-projects-list li::before {
-      content: "•";
-      color: rgba(148, 163, 184, 0.9);
-      font-size: 13px;
-      margin-top: 1px;
-    }
-
-    .more-projects-list strong {
-      color: #e5e7eb;
-    }
-
-    .key-metrics-card {
-      border-radius: 16px;
-      padding: 10px;
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      background: radial-gradient(circle at 0 0, #020617, #020617);
-      box-shadow:
-        0 18px 40px rgba(15, 23, 42, 0.95),
-        0 0 0 1px rgba(15, 23, 42, 0.9);
-      font-size: 11px;
-    }
-
-    .key-metrics-title {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-soft);
-      margin: 0 0 6px;
-    }
-
-    .key-metrics-row {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-    }
-
-    .key-metric-item {
-      border-radius: 12px;
-      padding: 6px 7px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: radial-gradient(circle at 0 0, #020617, #020617);
-      color: #e5e7eb;
-    }
-
-    .key-metric-label {
-      font-size: 11px;
-      color: var(--text-soft);
-      margin-bottom: 2px;
-    }
-
-    .key-metric-value {
-      font-size: 12px;
-      font-weight: 600;
-      color: #e5e7eb;
-    }
-
-    .key-metric-caption {
-      font-size: 10px;
-      color: #9ca3af;
-      margin-top: 2px;
-    }
-
-    .about-section {
-      max-width: 780px;
-      margin: 0 auto 18px;
-      text-align: center;
-    }
-
-    .about-section .small {
-      font-size: 13px;
-      line-height: 1.7;
-      color: var(--text-muted);
-      margin: 0 0 8px;
-    }
-
-    .about-section strong {
-      color: #e5e7eb;
-    }
-
-    .more-projects-module {
-      margin-top: 18px;
-    }
-
-    .more-projects-heading {
-      font-size: 12px;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-      margin: 0 0 10px;
-      text-align: center;
-      position: relative;
-      display: inline-block;
-      padding-bottom: 6px;
-    }
-
-    .more-projects-heading::after {
+    .top-project::after {
       content: "";
       position: absolute;
-      left: 50%;
-      bottom: 0;
-      width: 120px;
-      height: 1px;
-      transform: translateX(-50%);
-      background: linear-gradient(
-        to right,
-        transparent,
-        rgba(148, 163, 184, 0.9),
-        transparent
-      );
-      box-shadow: 0 0 10px rgba(148, 163, 184, 0.7);
+      inset: -30%;
+      background: radial-gradient(circle at 50% 0%, rgba(120,160,255,0.22), transparent 60%);
+      mix-blend-mode: screen;
+      opacity: 0;
+      transition: opacity 0.6s ease-out;
+      pointer-events: none;
     }
+
+    .top-project:hover::after {
+      opacity: 1;
+    }
+
+    .top-project:hover {
+      transform: translateY(-6px) scale(1.10) rotateX(2deg) rotateY(-2deg);
+      box-shadow: 0 32px 70px rgba(0,0,0,0.18);
+      background: #ffffff;
+      border-color: #b4c3ff;
+      z-index: 40;
+    }
+
+    .secondary-project {
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+    }
+
+    .secondary-project:hover {
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.14);
+      border-color: #d5defc;
+      background: #ffffff;
+      z-index: 30;
+    }
+
+    /* MODULES */
+
+    .module {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 20px;
+      box-shadow: var(--shadow-soft);
+      transition:
+        transform 0.25s ease-out,
+        box-shadow 0.25s ease-out,
+        border-color 0.25s ease-out,
+        background 0.25s ease-out;
+    }
+
+    .module:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+      border-color: #d6e2ff;
+      background: #fcfdff;
+    }
+
+    .projects-module {
+      margin-bottom: 36px;
+    }
+
+    .projects-module-inner {
+      max-width: 100%;
+    }
+
+    /* SKILLS & TOOLS */
 
     .skills-section {
-      margin-top: 24px;
+      margin-top: 10px;
+      margin-bottom: 40px;
     }
 
-    .skills-content {
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
-      gap: 14px;
-      align-items: flex-start;
-    }
-
-    @media (max-width: 900px) {
-      .skills-content {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .skills-column-title {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-soft);
-      margin: 0 0 8px;
-    }
-
-    .skills-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-size: 11px;
-      color: #9ca3af;
-    }
-
-    .skills-list li {
-      margin-bottom: 4px;
-    }
-
-    .skills-list strong {
-      color: #e5e7eb;
-    }
-
-    .skills-pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .skills-pill {
-      font-size: 10px;
-      border-radius: 999px;
-      padding: 3px 8px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      color: #cbd5f5;
-      background: radial-gradient(circle at 0 0, #020617, #020617);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .pill-row {
-      max-width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-      justify-content: center;
-    }
-
-    @media (max-width: 768px) {
-      .pill-row {
-        max-width: 100%;
-      }
-    }
-
-    .projects-section .section-heading,
-    .more-projects-heading,
-    .skills-section .section-heading {
-      display: block;
+    .skills-module {
+      position: relative;
+      overflow: hidden;
       text-align: center;
     }
 
-    .hero-main-card .section-heading {
-      display: none;
+    .skills-module::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #5a7bff, #9f7bff);
+      opacity: 0.9;
     }
 
-    .about-section .section-heading {
-      margin-left: 50%;
-      transform: translateX(-50%);
+    .skills-module-inner {
+      margin-top: 14px;
+      text-align: center;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .section-heading.heading-visible {
-      margin-left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .skills-section .skills-column-title {
-      text-align: left;
-    }
-
-    .main-footer {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 4px 4px 0;
-      font-size: 11px;
-      color: var(--text-soft);
+    .skills-block-title {
+      font-size: 0.8rem;
+      margin: 18px 0 8px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      border-top: 1px solid rgba(148, 163, 184, 0.25);
-      margin-top: 28px;
+      justify-content: center;
+      gap: 6px;
+      color: var(--muted);
     }
 
-    .main-footer span {
+    .skills-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0 auto 10px;
+      max-width: 680px;
+    }
+
+    .skills-icon {
+      font-size: 0.95rem;
+      text-transform: none;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .skill-tag {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid #e0e4ff;
+      background: #f5f7ff;
+      color: #3a4374;
+      white-space: nowrap;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .skill-tag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      background: #ffffff;
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      margin: 10px auto 0;
+      max-width: 780px;
+      text-align: center;
+    }
+
+    .contact-title {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .contact-text {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .contact-link {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f8f9ff;
+      text-decoration: none;
+      color: #234;
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
 
-    .main-footer a {
-      color: #93c5fd;
-      text-decoration: none;
-      border-bottom: 1px dotted rgba(148, 163, 184, 0.6);
+    .contact-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+      border-color: #bfc9ff;
+      background: #ffffff;
     }
 
-    .main-footer a:hover {
-      color: #bfdbfe;
-      border-bottom-style: solid;
-    }
-
-    @keyframes accentGlow {
-      0% {
-        box-shadow:
-          0 0 0 0 rgba(56, 189, 248, 0.15),
-          0 0 30px rgba(59, 130, 246, 0.35);
-      }
-      50% {
-        box-shadow:
-          0 0 0 6px rgba(56, 189, 248, 0.05),
-          0 0 45px rgba(59, 130, 246, 0.5);
-      }
-      100% {
-        box-shadow:
-          0 0 0 0 rgba(56, 189, 248, 0.0),
-          0 0 30px rgba(59, 130, 246, 0.35);
-      }
-    }
-
-    .hero-main-card {
-      animation: accentGlow 6s ease-in-out infinite;
-    }
-
-    .hero-right-card {
-      animation: accentGlow 7.5s ease-in-out infinite;
-      animation-delay: 1.2s;
-    }
-
-    .project-card.cat-ops::before {
-      background:
-        radial-gradient(circle at 0 0, rgba(34, 197, 94, 0.18), transparent 55%),
-        radial-gradient(circle at 100% 0, rgba(56, 189, 248, 0.25), transparent 60%);
-    }
-
-    .project-card.cat-training::before {
-      background:
-        radial-gradient(circle at 0 0, rgba(236, 72, 153, 0.2), transparent 55%),
-        radial-gradient(circle at 100% 0, rgba(129, 140, 248, 0.25), transparent 60%);
-    }
-
-    .project-card.cat-data::before {
-      background:
-        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.18), transparent 55%),
-        radial-gradient(circle at 100% 0, rgba(129, 140, 248, 0.25), transparent 60%);
-    }
-
-    .project-card.cat-ops .project-title {
-      color: #bbf7d0;
-    }
-
-    .project-card.cat-training .project-title {
-      color: #fbcfe8;
-    }
-
-    .project-card.cat-data .project-title {
-      color: #bfdbfe;
-    }
-
-    .project-card.cat-ops .project-category-label span {
-      color: #bbf7d0;
-    }
-
-    .project-card.cat-training .project-category-label span {
-      color: #f9a8d4;
-    }
-
-    .project-card.cat-data .project-category-label span {
-      color: #bfdbfe;
-    }
-
-    .highlighted-copy {
-      border-radius: 14px;
-      padding: 8px 9px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: radial-gradient(circle at 0 0, #020617, #020617);
-      font-size: 11px;
-      color: #e5e7eb;
-      margin-top: 8px;
-    }
-
-    .highlighted-copy strong {
-      color: #f97316;
-    }
-
-    .hero-main-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: repeating-linear-gradient(
-        -45deg,
-        rgba(15, 23, 42, 0.2),
-        rgba(15, 23, 42, 0.2) 1px,
-        transparent 1px,
-        transparent 3px
-      );
-      opacity: 0.2;
-      mix-blend-mode: soft-light;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .hero-right-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: repeating-linear-gradient(
-        45deg,
-        rgba(15, 23, 42, 0.2),
-        rgba(15, 23, 42, 0.2) 1px,
-        transparent 1px,
-        transparent 3px
-      );
-      opacity: 0.18;
-      mix-blend-mode: soft-light;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .projects-module::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(
-        circle at 50% 0,
-        rgba(148, 163, 184, 0.1),
-        transparent 60%
-      );
-      opacity: 0.7;
-      mix-blend-mode: soft-light;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    @keyframes glowFloat {
-      0% {
-        transform: translateY(0);
-        opacity: 0.6;
-      }
-      50% {
-        transform: translateY(-4px);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 0.6;
-      }
-    }
-
-    .hero-meta-item {
-      animation: glowFloat 5s ease-in-out infinite;
-    }
-
-    .hero-meta-item:nth-child(2) {
-      animation-delay: 0.8s;
-    }
-
-    .hero-meta-item:nth-child(3) {
-      animation-delay: 1.6s;
-    }
-
-    main::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.08), transparent 55%),
-        radial-gradient(circle at 80% 10%, rgba(168, 85, 247, 0.04), transparent 55%),
-        radial-gradient(circle at 50% 100%, rgba(249, 115, 22, 0.03), transparent 60%);
-      mix-blend-mode: screen;
-      opacity: 0.7;
-      z-index: -2;
-    }
-
-    main::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image: linear-gradient(
-          rgba(15, 23, 42, 0.6),
-          rgba(15, 23, 42, 0.92)
-        ),
-        repeating-linear-gradient(
-          0deg,
-          transparent,
-          transparent 2px,
-          rgba(15, 23, 42, 0.85) 2px,
-          rgba(15, 23, 42, 0.85) 4px
-        );
-      mix-blend-mode: multiply;
-      pointer-events: none;
-      z-index: -3;
-    }
-
-    .hero-main-card,
-    .hero-right-card,
-    .module,
-    .highlighted-copy {
-      animation-duration: 0.01s;
-      animation-name: none !important;
-    }
-
-    body::before,
-    body::after,
-    main::before,
-    main::after {
-      opacity: 0.75;
-    }
-
-    @keyframes softGlow {
-      0% {
-        opacity: 0.5;
-      }
-      50% {
-        opacity: 0.75;
-      }
-      100% {
-        opacity: 0.5;
-      }
-    }
-
-    .pill-row::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background: radial-gradient(
-        circle at 50% 0,
-        rgba(148, 163, 184, 0.1),
-        transparent 60%
-      );
-      opacity: 0.6;
-      mix-blend-mode: soft-light;
-      pointer-events: none;
-      z-index: -1;
-      animation: softGlow 8s ease-in-out infinite;
-    }
-
-    .pill-row {
-      position: relative;
-      z-index: 1;
-    }
-
-    @keyframes shimmer {
-      0% {
-        background-position: -200% 0;
-      }
-      100% {
-        background-position: 200% 0;
-      }
-    }
-
-    .section-heading,
-    .more-projects-heading {
-      background: linear-gradient(
-        90deg,
-        #9ca3af,
-        #e5e7eb,
-        #9ca3af
-      );
-      background-size: 200% 100%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: shimmer 8s linear infinite;
-    }
-
-    .section-heading::after,
-    .more-projects-heading::after {
-      animation: softGlow 6s ease-in-out infinite;
-    }
-
-    .scroll-indicator-arrow {
-      animation-duration: 1s;
-    }
-
-    @keyframes glowCard {
-      0% {
-        box-shadow:
-          0 18px 35px rgba(15, 23, 42, 0.9),
-          0 0 0 1px rgba(15, 23, 42, 0.85);
-      }
-      50% {
-        box-shadow:
-          0 24px 50px rgba(15, 23, 42, 0.98),
-          0 0 0 1px rgba(148, 163, 184, 0.5);
-      }
-      100% {
-        box-shadow:
-          0 18px 35px rgba(15, 23, 42, 0.9),
-          0 0 0 1px rgba(15, 23, 42, 0.85);
-      }
-    }
-
-    .project-card {
-      animation: glowCard 10s ease-in-out infinite;
-    }
-
-    .project-card:nth-child(2) {
-      animation-delay: 1s;
-    }
-
-    .project-card:nth-child(3) {
-      animation-delay: 2s;
-    }
-
-    .more-projects-module .module {
-      animation-delay: 0.5s;
-    }
-
-    @keyframes circuitGlow {
-      0%,
-      100% {
-        opacity: 0.55;
-      }
-      50% {
-        opacity: 0.95;
-      }
-    }
-
-    .hero-main-card::before,
-    .hero-right-card::before,
-    .projects-module::before {
-      animation: circuitGlow 12s ease-in-out infinite;
-    }
+    /* FOOTER */
 
-    .pill-row::before,
-    .section-divider::before,
-    .section-divider::after {
-      animation: circuitGlow 10s ease-in-out infinite;
+    .footer {
+      padding: 18px 16px 22px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(0,0,0,0.04);
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
-    .highlighted-copy {
-      border-color: rgba(249, 115, 22, 0.65);
-      background:
-        radial-gradient(circle at 0 0, rgba(251, 146, 60, 0.15), transparent 55%),
-        radial-gradient(circle at 100% 0, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 1));
-      box-shadow:
-        0 0 0 1px rgba(15, 23, 42, 1),
-        0 14px 35px rgba(15, 23, 42, 0.95);
-      border-radius: 16px;
-    }
-
-    .highlighted-copy strong {
-      color: #fed7aa;
-    }
-
-    @keyframes vpGlow {
-      0% {
-        box-shadow:
-          0 18px 45px rgba(15, 23, 42, 0.95),
-          0 0 0 1px rgba(15, 23, 42, 0.95);
-      }
-      50% {
-        box-shadow:
-          0 24px 55px rgba(15, 23, 42, 1),
-          0 0 0 1px rgba(129, 140, 248, 0.8);
-      }
-      100% {
-        box-shadow:
-          0 18px 45px rgba(15, 23, 42, 0.95),
-          0 0 0 1px rgba(15, 23, 42, 0.95);
-      }
-    }
-
-    .vp-main {
-      animation: vpGlow 14s ease-in-out infinite;
-    }
-
-    .vp-pill-primary,
-    .vp-focus-pill,
-    .vp-focus-pill-icon {
-      animation: circuitGlow 8s ease-in-out infinite;
-    }
-
-    @keyframes subtleFlow {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    .skills-pill {
-      background-image: linear-gradient(
-        90deg,
-        #020617,
-        #020617,
-        #020617,
-        #020617
-      );
-      background-size: 200% 200%;
-      animation: subtleFlow 16s ease infinite;
-    }
-
-    @keyframes chromeGlow {
-      0%,
-      100% {
-        opacity: 0.4;
-      }
-      50% {
-        opacity: 0.75;
-      }
-    }
-
-    .main-footer {
-      position: relative;
-      overflow: hidden;
-      border-image: linear-gradient(
-        to right,
-        rgba(148, 163, 184, 0.1),
-        rgba(148, 163, 184, 0.6),
-        rgba(148, 163, 184, 0.1)
-      ) 1;
-      border-top-width: 1px;
-      border-top-style: solid;
-      margin-top: 36px;
-      padding-top: 10px;
-    }
-
-    .main-footer::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        circle at 50% 0,
-        rgba(148, 163, 184, 0.3),
-        transparent 60%
-      );
-      opacity: 0.4;
-      mix-blend-mode: soft-light;
-      animation: chromeGlow 12s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    .main-footer span,
-    .main-footer a {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-meta-item,
-    .vp-pill-primary,
-    .vp-focus-pill,
-    .skills-pill,
-    .project-tag,
-    .pill {
-      will-change: box-shadow, transform, opacity;
-    }
-
-    @keyframes noise {
-      0% {
-        transform: translate(0, 0);
-      }
-      10% {
-        transform: translate(-1px, -1px);
-      }
-      20% {
-        transform: translate(1px, -1px);
-      }
-      30% {
-        transform: translate(-1px, 1px);
-      }
-      40% {
-        transform: translate(1px, 1px);
-      }
-      50% {
-        transform: translate(-1px, 0);
-      }
-      60% {
-        transform: translate(1px, 0);
-      }
-      70% {
-        transform: translate(0, 1px);
-      }
-      80% {
-        transform: translate(0, -1px);
-      }
-      90% {
-        transform: translate(1px, 1px);
-      }
-      100% {
-        transform: translate(0, 0);
-      }
-    }
-
-    .projects-module::before,
-    .hero-main-card::before,
-    .hero-right-card::before {
-      animation: noise 20s steps(10, end) infinite;
-    }
-
-    body::before,
-    body::after,
-    main::before,
-    main::after {
-      animation: noise 30s steps(10, end) infinite;
-    }
-
-    body::before,
-    body::after,
-    main::before,
-    main::after {
-      background-position: center;
-      background-size: cover;
-    }
-
-    @keyframes cyberGrid {
-      0% {
-        background-position: 0 0;
-      }
-      100% {
-        background-position: 100px 50px;
-      }
-    }
-
-    body {
-      background-image:
-        radial-gradient(circle at top, rgba(15, 23, 42, 0.9), #020617 55%, #000 100%),
-        repeating-linear-gradient(
-          0deg,
-          rgba(15, 23, 42, 0.9),
-          rgba(15, 23, 42, 0.9) 1px,
-          rgba(15, 23, 42, 1) 1px,
-          rgba(15, 23, 42, 1) 3px
-        );
-      background-size: cover, 140px 140px;
-      animation: cyberGrid 45s linear infinite;
-    }
-
-    @keyframes floatingParticles {
-      0% {
-        background-position: 0 0;
-      }
-      50% {
-        background-position: 50px -50px;
-      }
-      100% {
-        background-position: 0 0;
-      }
-    }
-
-    body::before {
-      background-image:
-        radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.12), transparent 55%),
-        radial-gradient(circle at 80% 10%, rgba(168, 85, 247, 0.08), transparent 55%),
-        radial-gradient(circle at 50% 100%, rgba(249, 115, 22, 0.06), transparent 60%);
-      background-size: 200% 200%;
-      animation: floatingParticles 50s ease-in-out infinite;
-    }
-
-    @keyframes highlightSweep {
-      0% {
-        transform: translateX(-100%);
-      }
-      50% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(100%);
-      }
-    }
-
-    .section-divider::before {
-      overflow: hidden;
-    }
-
-    .section-divider::after {
-      animation: highlightSweep 5s ease-in-out infinite;
-    }
-
-    .project-card,
-    .module,
-    .hero-main-card,
-    .hero-right-card {
-      transform: translateZ(0);
-    }
-
-    .pill-row::before {
-      transform: translateZ(0);
-    }
-
-    @keyframes glowMesh {
-      0% {
-        background:
-          radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.15), transparent 55%),
-          radial-gradient(
-            circle at 100% 0,
-            rgba(168, 85, 247, 0.12),
-            transparent 55%
-          );
-      }
-      50% {
-        background:
-          radial-gradient(circle at 0 100%, rgba(56, 189, 248, 0.1), transparent 55%),
-          radial-gradient(
-            circle at 100% 100%,
-            rgba(251, 191, 36, 0.08),
-            transparent 55%
-          );
-      }
-      100% {
-        background:
-          radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.15), transparent 55%),
-          radial-gradient(
-            circle at 100% 0,
-            rgba(168, 85, 247, 0.12),
-            transparent 55%
-          );
-      }
-    }
-
-    .projects-module::before {
-      animation: glowMesh 24s ease-in-out infinite;
-    }
-
-    .module,
-    .hero-main-card,
-    .hero-right-card {
-      border-radius: 22px;
-    }
-
-    .project-card {
-      border-radius: 16px;
-    }
-
-    .highlighted-copy {
-      border-radius: 16px;
-    }
-
-    .badge {
-      border-radius: 999px;
-    }
-
-    @keyframes lineGlow {
-      0% {
-        box-shadow: 0 0 12px rgba(148, 163, 184, 0.3);
-      }
-      50% {
-        box-shadow: 0 0 20px rgba(148, 163, 184, 0.7);
-      }
-      100% {
-        box-shadow: 0 0 12px rgba(148, 163, 184, 0.3);
-      }
-    }
-
-    .section-divider::after {
-      box-shadow: 0 0 10px rgba(148, 163, 184, 0.7);
-      animation: lineGlow 3.5s ease-in-out infinite;
-    }
-
-    @keyframes orbDrift {
-      0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.8;
-      }
-      50% {
-        transform: translate(-50%, -48%) scale(1.04);
-        opacity: 1;
-      }
-      100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.8;
-      }
-    }
-
-    .section-divider::before {
-      animation: orbDrift 7s ease-in-out infinite;
-    }
-
-    @keyframes headerShimmer {
-      0% {
-        background-position: 0% 50%;
-      }
-      100% {
-        background-position: 200% 50%;
-      }
-    }
-
-    .section-heading,
-    .more-projects-heading {
-      background-image: linear-gradient(
-        90deg,
-        #9ca3af,
-        #e5e7eb,
-        #9ca3af
-      );
-      background-size: 200% 100%;
-      animation: headerShimmer 15s linear infinite;
-    }
-
-    @keyframes badgeOrbit {
-      0% {
-        box-shadow:
-          0 0 0 0 rgba(56, 189, 248, 0.25),
-          0 0 25px rgba(56, 189, 248, 0.8);
-      }
-      50% {
-        box-shadow:
-          0 0 0 4px rgba(56, 189, 248, 0.1),
-          0 0 40px rgba(56, 189, 248, 1);
-      }
-      100% {
-        box-shadow:
-          0 0 0 0 rgba(56, 189, 248, 0.0),
-          0 0 25px rgba(56, 189, 248, 0.8);
-      }
-    }
-
-    .badge-icon {
-      animation: badgeOrbit 6s ease-in-out infinite;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.001s !important;
-        animation-iteration-count: 1 !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-      }
-    }
+    /* RESPONSIVE */
 
     @media (max-width: 768px) {
-      body {
-        background-attachment: scroll;
+      .header-hero {
+        padding: 72px 16px 56px;
+      }
+      .title {
+        font-size: 2.4rem;
+        letter-spacing: 0.09em;
+      }
+      .role-tag {
+        font-size: 0.82rem;
+        padding: 8px 22px;
+        margin-bottom: 16px;
+      }
+      .subtitle {
+        font-size: 1.05rem;
+        max-width: 100%;
+        padding: 0 4px;
+      }
+      .meta {
+        font-size: 0.85rem;
+        gap: 6px;
+      }
+      .pill-row {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .pill {
+        font-size: 0.76rem;
+        padding: 3px 8px;
+      }
+      .page {
+        padding: 0 14px 36px;
+      }
+      .about-section {
+        margin: 16px auto 26px;
+      }
+      .module {
+        padding: 16px;
+      }
+      .project-card {
+        padding: 14px 12px 12px;
+      }
+      .project-card h3 {
+        font-size: 0.9rem;
+      }
+      .project-summary,
+      .impact-metrics,
+      .project-details p {
+        font-size: 0.84rem;
+      }
+      .skills-text {
+        font-size: 0.88rem;
+      }
+      .contact-text {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-hero {
+        padding: 68px 14px 50px;
+      }
+      .title {
+        font-size: 2rem;
+        letter-spacing: 0.08em;
+      }
+      .role-tag {
+        font-size: 0.78rem;
+        padding: 7px 18px;
+      }
+      .subtitle {
+        font-size: 0.98rem;
+        line-height: 1.45;
+      }
+      .meta {
+        font-size: 0.8rem;
+        gap: 4px;
+      }
+      .section-heading {
+        font-size: 0.85rem;
+        margin-bottom: 16px;
+      }
+      .about-section {
+        padding: 18px 2px 22px;
+      }
+      .small {
+        font-size: 0.88rem;
+      }
+      .project-card {
+        padding: 12px 10px 10px;
+        border-radius: 14px;
+      }
+      .project-category-label {
+        font-size: 0.62rem;
+        letter-spacing: 0.12em;
+      }
+      .project-card h3 {
+        font-size: 0.85rem;
+      }
+      .tagline {
+        font-size: 0.8rem;
+      }
+      .impact-line {
+        font-size: 0.84rem;
+      }
+      .skills-block-title {
+        font-size: 0.75rem;
+      }
+      .skill-tag {
+        font-size: 0.76rem;
+        padding: 5px 10px;
+      }
+      .contact-title {
+        font-size: 0.9rem;
+      }
+      .contact-link {
+        font-size: 0.84rem;
+        padding: 7px 14px;
       }
     }
   </style>
 </head>
+
 <body>
-  <main>
-    <header class="hero-grid reveal">
-      <div class="hero-main-card">
-        <div class="badge">
-          <div class="badge-pulse"></div>
-          <div class="badge-icon">
-            <div class="badge-icon-inner">JP</div>
-          </div>
-          <span class="badge-label">Project &amp; Operations Lead · Streaming &amp; Digital Media</span>
+  <nav class="top-nav">
+    <a href="#about">About</a>
+    <a href="#key-projects">Key Projects</a>
+    <a href="#more-projects">More</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header class="header-hero">
+    <h1 class="title">JEAN PAUL ANGULO</h1>
+
+    <span class="role-tag">
+      PROJECT MANAGER · OPERATIONAL EXCELLENCE · STREAMING OPERATIONS
+    </span>
+
+    <p class="subtitle">
+      Project &amp; operations lead focused on building scalable workflows, reducing operational friction,
+      and aligning global teams so streaming platforms ship reliably at scale.
+    </p>
+
+    <div class="meta">
+      <span>Madrid, Spain</span>
+      <span>Bilingual ES/EN</span>
+      <span><a href="mailto:jeanpaulangulo@gmail.com">jeanpaulangulo@gmail.com</a></span>
+      <span><a href="https://www.linkedin.com/in/jeanpaulangulo/" target="_blank">LinkedIn</a></span>
+      <span><a href="docs/Portfolio_Projects_JeanPaul_Angulo.pdf" target="_blank">Portfolio (one-pager)</a></span>
+      <span><a href="docs/CV_JeanPaul_Angulo_ProjectManager.pdf" target="_blank">CV (PDF)</a></span>
+    </div>
+
+    <div class="pill-row">
+      <div class="pill">Process Optimization</div>
+      <div class="pill">Global Workflows</div>
+      <div class="pill">Streaming &amp; Digital Media</div>
+      <div class="pill">Troubleshooting &amp; QA</div>
+      <div class="pill">SOP &amp; Training</div>
+      <div class="pill">AI-Assisted Documentation</div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>SCROLL TO PROJECTS</span>
+      <div class="scroll-indicator-arrow">⋁</div>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- STRENGTHS -->
+    <section class="strengths-section">
+      <aside class="module strengths-module reveal">
+        <p class="strengths-heading">STRENGTHS AT A GLANCE</p>
+        <div class="strengths-pills">
+          <span class="strength-pill">Global workflow architect</span>
+          <span class="strength-pill">Troubleshooting systems expert</span>
+          <span class="strength-pill">Cross-regional operations lead</span>
+          <span class="strength-pill">QA &amp; calibration specialist</span>
+          <span class="strength-pill">Scalable SOP &amp; training builder</span>
         </div>
-
-        <div class="hero-tagline">
-          <span class="hero-tagline-dot"></span>
-          GLOBAL TROUBLESHOOTING · WORKFLOW ARCHITECTURE · PROJECT EXECUTION
-        </div>
-
-        <div class="hero-title-row">
-          <h1 class="hero-name">Jean Paul Angulo</h1>
-          <div class="hero-role">PROJECT &amp; OPERATIONS LEAD · STREAMING</div>
-        </div>
-
-        <div class="hero-meta">
-          <div class="hero-meta-item">
-            <span class="hero-meta-label">Experience</span>
-            <span>10+ years in TV &amp; streaming operations</span>
-          </div>
-          <div class="hero-meta-item">
-            <span class="hero-meta-label">Recent</span>
-            <span><strong>Process Lead</strong> for troubleshooting at <strong>Prime Video</strong></span>
-          </div>
-          <div class="hero-meta-item">
-            <span class="hero-meta-label">Partners</span>
-            <span>Worked with <strong>Netflix, Prime Video, Paramount+, DAZN, Fox Networks, Disney</strong></span>
-          </div>
-        </div>
-
-        <p class="hero-summary">
-          I design and scale <strong>operations, workflows, and troubleshooting systems</strong> so streaming platforms can launch and run content reliably across regions. My focus: <strong>reduce complexity for teams, shorten time-to-fix, and keep customer experience intact</strong> even when something breaks.
-        </p>
-
-        <div class="hero-meta-secondary">
-          <span><strong>Core profile:</strong> Process &amp; Operations Lead · Project Manager</span>
-          <span><strong>Scope:</strong> Global troubleshooting, workflows, SOPs, cross-regional coordination</span>
-        </div>
-
-        <div class="highlighted-copy">
-          <strong>I’m the person you call when operations get complex or fragmented.</strong> I align teams, partners and tools around clear workflows, bringing structure, documentation and data to troubleshoot issues faster and scale processes without losing quality.
-        </div>
-
-        <div class="pill-row">
-          <div class="pill">Process Optimization</div>
-          <div class="pill">Global Workflows</div>
-          <div class="pill">Streaming &amp; Digital Media</div>
-          <div class="pill">Troubleshooting &amp; QA</div>
-          <div class="pill">SOP &amp; Training</div>
-          <div class="pill">AI-Assisted Documentation</div>
-          <div class="pill">Global Workflow Architect</div>
-          <div class="pill">Troubleshooting Systems Expert</div>
-          <div class="pill">Cross-Regional Operations Lead</div>
-          <div class="pill">QA &amp; Calibration Specialist</div>
-          <div class="pill">Scalable SOP &amp; Training Builder</div>
-        </div>
-
-        <div class="scroll-indicator">
-          <span>SCROLL TO PROJECTS</span>
-          <div class="scroll-indicator-arrow">⋁</div>
-        </div>
-      </div>
-
-      <div class="hero-right-card reveal">
-        <p class="vp-label">
-          <span class="vp-label-dot"></span>
-          WHAT VP / DIRECTORS GET FROM ME
-        </p>
-
-        <div class="vp-main">
-          <div class="vp-main-content">
-            <div class="vp-header">
-              <div class="vp-title-block">
-                <h2>Operational Clarity</h2>
-                <p>From scattered workflows to a single, scalable way of working.</p>
-              </div>
-              <div class="vp-stats">
-                <div class="vp-pill-primary">
-                  <span>📊 30%+ faster resolution</span>
-                </div>
-                <div class="vp-pill-secondary">
-                  <span class="vp-pill-secondary-dot"></span>
-                  Less rework, fewer blind spots
-                </div>
-              </div>
-            </div>
-
-            <div class="vp-stats-row">
-              <div class="vp-metric-card">
-                <div class="vp-metric-label">
-                  <span>Global troubleshooting</span>
-                  <span>Prime Video</span>
-                </div>
-                <div class="vp-metric-value">
-                  <span>3+</span>
-                  <span>workflows</span>
-                </div>
-                <div class="vp-metric-chip">
-                  <span class="vp-metric-dot"></span>
-                  Ticketing · Redelivery · Partner Support
-                </div>
-              </div>
-
-              <div class="vp-metric-card">
-                <div class="vp-metric-label">
-                  <span>Impact</span>
-                  <span>Parcel of work</span>
-                </div>
-                <div class="vp-metric-value">
-                  <span>30%</span>
-                  <span class="vp-metric-trend">TTR reduction</span>
-                </div>
-                <div class="vp-metric-chip">
-                  <span class="vp-metric-dot"></span>
-                  Less back-and-forth, clearer ownership
-                </div>
-              </div>
-
-              <div class="vp-metric-card">
-                <div class="vp-metric-label">
-                  <span>Teams</span>
-                  <span>Cross-regional</span>
-                </div>
-                <div class="vp-metric-value">
-                  <span>4</span>
-                  <span>sites</span>
-                </div>
-                <div class="vp-metric-chip">
-                  <span class="vp-metric-dot"></span>
-                  Madrid · Tokyo · Chennai · Costa Rica
-                </div>
-              </div>
-            </div>
-
-            <div class="vp-focus">
-              <div class="vp-focus-content">
-                <div>
-                  <div class="vp-focus-label">My sweet spot</div>
-                  <div class="vp-focus-pill">
-                    <span class="vp-focus-pill-icon">⚙</span>
-                    <span>Ambiguous problems that need structure and ownership</span>
-                  </div>
-                  <div class="vp-focus-text">
-                    I identify where <strong>process, tooling and accountability</strong> are misaligned and turn that into a <strong>clear, documented and trainable workflow</strong>.
-                  </div>
-                  <ul class="vp-focus-list">
-                    <li>Translate business goals into operational workflows.</li>
-                    <li>Align stakeholders across regions and teams.</li>
-                    <li>Build documentation, training and QA to sustain the change.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="meta-list">
-              <li>
-                <span class="meta-dot"></span>
-                <span><strong>Background:</strong> 10+ years in TV, OTT and streaming operations (Fox Networks, Disney, Prime Video, Paramount+, DAZN)</span>
-              </li>
-              <li>
-                <span class="meta-dot"></span>
-                <span><strong>Role:</strong> Process &amp; Operations Lead, project execution and troubleshooting specialist</span>
-              </li>
-              <li>
-                <span class="meta-dot"></span>
-                <span><strong>Focus areas:</strong> Global workflows, SOPs, QA, escalation paths, partner and internal teams coordination</span>
-              </li>
-            </div>
-
-            <div class="meta-footer">
-              <span class="meta-location">
-                <span class="meta-location-dot"></span>
-                Based in Madrid · Available in English &amp; Spanish
-              </span>
-              <span>
-                <a href="mailto:jeanpaulangulo@gmail.com">jeanpaulangulo@gmail.com</a>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+      </aside>
+    </section>
 
     <!-- ABOUT -->
     <section id="about" class="about-section reveal">
       <p class="section-heading heading-visible">ABOUT ME</p>
 
       <p class="small">
-        Project &amp; Operations Lead specialized in troubleshooting, workflows and cross-team coordination for streaming and digital media platforms. I help teams go from scattered processes and unclear ownership to <strong>structured, documented and scalable operations</strong>.
+        Project & Operations Lead specialized in troubleshooting systems, workflow design and cross-regional governance for streaming and digital media. Over more than 10 years with brands such as <strong>Amazon Prime Video</strong>, <strong>Disney+</strong>, <strong>Paramount+</strong>, <strong>DAZN</strong>, <strong>Fox Networks</strong> and <strong>Antena 3</strong>, I have focused on building scalable, reliable workflows that reduce ambiguity and operational friction.
       </p>
 
       <p class="small">
-        My work sits at the intersection of operations, product and content delivery. I’ve worked with <strong>Prime Video, Netflix, Paramount+, DAZN, Fox Networks and Disney</strong>, always with the same goal: make sure that what’s designed at strategy level can be executed consistently in day-to-day operations.
+        My work sits at the intersection of operations, product and quality. I have helped redesign the <strong>global troubleshooting framework</strong>, set up a recurring cross-regional governance model as a <strong>Process Lead</strong>, and launch a <strong>metadata accuracy pilot</strong> projected to reduce inactive tickets by <strong>over 80%</strong> and reach <strong>95% validation accuracy</strong>. These initiatives contributed to a <strong>30% reduction in duplicated troubleshooting</strong>, improved alignment across regions and faster resolution of high-complexity cases.
       </p>
 
       <p class="small">
-        I enjoy environments with high ambiguity, global stakeholders and complex workflows. I bring a mix of <strong>hands-on troubleshooting, project management, documentation and training</strong> so that processes, tools and documentation evolve with business needs and teams can deliver consistent outcomes at scale.
+        I enjoy environments with high ambiguity, global stakeholders and a strong focus on quality. I bring structure to complex systems, clarify ownership and routing, and ensure that processes, tools and documentation evolve with business needs so teams can deliver consistent outcomes at scale.
       </p>
     </section>
 
@@ -2454,278 +987,494 @@
           <div class="project-grid-top">
             <!-- 1. Global Troubleshooting Framework & SME Role Redesign -->
             <article class="project-card top-project cat-ops reveal">
-              <div class="project-card-inner">
-                <p class="project-category-label">
-                  <span><span class="cat-icon">🌐</span> GLOBAL OPERATIONS &amp; PROCESS IMPROVEMENT</span>
-                  <span>Prime Video · Troubleshooting</span>
-                </p>
-                <h3 class="project-title">Global Troubleshooting Framework &amp; SME Role Redesign</h3>
-                <p class="project-meta">
-                  <strong>Role:</strong> Process Lead &amp; SME for Troubleshooting · <strong>Scope:</strong> Global workflows across Ticketing, Redelivery, Internal Support &amp; Partner Support.
-                </p>
-                <p class="project-impact">
-                  <strong>Impact:</strong> Helped structure a global troubleshooting framework and SME role across 3+ workflows, contributing to <strong>30% faster time to resolution</strong>, fewer back-and-forth loops between teams and partners and clearer ownership of escalations.
-                </p>
-                <p class="project-details">
-                  <strong>What I did:</strong> Mapped current troubleshooting flows across regions, identified gaps in ownership and tooling, and helped define a <strong>single coherent way of working</strong> across Ticketing, Redelivery, Internal Support and Partner Support. Co-designed the SME role model and responsibilities, connecting operations, product and tooling teams to ensure issues were documented, tracked and resolved consistently.
-                </p>
-                <div class="project-tags">
-                  <span class="project-tag impact">30%+ faster resolution</span>
-                  <span class="project-tag ops">Global workflows</span>
-                  <span class="project-tag ops">Escalation paths</span>
-                  <span class="project-tag training">SME role design</span>
-                </div>
-                <div class="project-link-row">
-                  <span class="project-scope">Global · Troubleshooting · Multi-team</span>
-                  <span>Ticketing · Redelivery · Internal Support · Partner Support</span>
-                </div>
+              <p class="project-category-label">
+                <span class="cat-icon">🌐</span>
+                GLOBAL OPERATIONS &amp; PROCESS IMPROVEMENT
+              </p>
+              <span class="top-badge">TOP PROJECT</span>
+              <h3>GLOBAL TROUBLESHOOTING FRAMEWORK &amp; SME ROLE REDESIGN</h3>
+              <p class="tagline">Global · Redelivery, Partner Support &amp; Internal Support</p>
+              <p class="impact-line">
+                <span class="impact-label">🎯 Impact</span>
+                  Unified 3 troubleshooting workflows under one SME framework and delivered 8 structural improvements across Tokyo, Madrid, Costa Rica and San José.
+              </p>
+              <p class="project-summary">
+                Standardised troubleshooting processes and redefined the SME role across regions to create a scalable, unified model.
+              </p>
+              <div class="project-details">
+                <p><strong>Role:</strong> Led cross-site presentations at the Tokyo offsite, created comprehensive documentation, collaborated with site and program managers, and facilitated working sessions and roundtables to present the benefits of consolidating workflows.</p>
+                <p><strong>Scope:</strong> Global project impacting redelivery, partner support and internal support across Asia, Europe and the Americas.</p>
+                <p><strong>Impact:</strong> Unified 3 troubleshooting workflows under one SME framework, created a shared calibration and QA audit system, delivered 8 structural improvements adopted across regions, and strengthened both cross-site collaboration and the SME career path.</p>
               </div>
             </article>
 
-            <!-- 2. Policy 2.0 & SOP Governance -->
-            <article class="project-card top-project cat-training reveal">
-              <div class="project-card-inner">
-                <p class="project-category-label">
-                  <span><span class="cat-icon">📚</span> SOP &amp; KNOWLEDGE SYSTEMS</span>
-                  <span>Prime Video · Global</span>
-                </p>
-                <h3 class="project-title">Policy 2.0: SOP Governance &amp; Migration Framework</h3>
-                <p class="project-meta">
-                  <strong>Role:</strong> Process Lead &amp; content owner for SOP migration · <strong>Scope:</strong> Global troubleshooting workflows &amp; documentation.
-                </p>
-                <p class="project-impact">
-                  <strong>Impact:</strong> Built a <strong>governance model and migration approach</strong> for SOPs as part of Policy 2.0, ensuring that documentation, workflows and ownership evolved in sync. Reduced ambiguity on “which SOP to follow”, enabled cleaner migrations and set the base for more scalable documentation.
-                </p>
-                <p class="project-details">
-                  <strong>What I did:</strong> Helped define criteria for which SOPs should move into the new Policy 2.0 framework, how to split or merge them, and how to connect them to real workflows and case types. Designed templates and guidance for SMEs and content owners, making sure every SOP had a clear purpose, audience and maintenance path.
-                </p>
-                <div class="project-tags">
-                  <span class="project-tag training">SOP governance</span>
-                  <span class="project-tag ops">Policy 2.0</span>
-                  <span class="project-tag training">Templates &amp; playbooks</span>
-                  <span class="project-tag data">Content ownership model</span>
-                </div>
-                <div class="project-link-row">
-                  <span class="project-scope">Global · SOPs &amp; Documentation</span>
-                  <span>Policy 2.0 · Governance · Migration</span>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="project-grid-rest">
-            <!-- 3. Global Offsite & Communication Framework (Tokyo) -->
-            <article class="project-card cat-ops reveal">
-              <div class="project-card-inner">
-                <p class="project-category-label">
-                  <span><span class="cat-icon">🛰</span> STRATEGY &amp; COMMUNICATION</span>
-                  <span>Prime Video · Global Offsite</span>
-                </p>
-                <h3 class="project-title">Global Troubleshooting Offsite &amp; Communication Framework (Tokyo)</h3>
-                <p class="project-meta">
-                  <strong>Role:</strong> Lead organizer &amp; process owner · <strong>Scope:</strong> Multi-team, multi-region troubleshooting operations.
-                </p>
-                <p class="project-impact">
-                  <strong>Impact:</strong> Hosted a global offsite in Tokyo that led to a <strong>new communication and escalation framework</strong> across global teams. Improved alignment between regions, clarified who owns what and created a shared language to discuss issues and priorities.
-                </p>
-                <p class="project-details">
-                  <strong>What I did:</strong> Defined the agenda, goals and content of the offsite, making sure it was anchored on real operational pain points. Facilitated sessions with managers and SMEs from multiple regions, documented decisions and turned them into <strong>actionable frameworks</strong> for day-to-day operations.
-                </p>
-                <div class="project-tags">
-                  <span class="project-tag ops">Global coordination</span>
-                  <span class="project-tag impact">New communication model</span>
-                  <span class="project-tag training">Workshops &amp; facilitation</span>
-                </div>
-                <div class="project-link-row">
-                  <span class="project-scope">Global · Troubleshooting teams</span>
-                  <span>Madrid · Tokyo · Chennai · Costa Rica</span>
-                </div>
+            <!-- 2. Global SME Alignment Program — Cross-Regional Troubleshooting Governance -->
+            <article class="project-card top-project cat-people reveal">
+              <p class="project-category-label">
+                <span class="cat-icon">👥</span>
+                CROSS-REGIONAL COLLABORATION
+              </p>
+              <span class="top-badge">TOP PROJECT</span>
+              <h3>GLOBAL SME ALIGNMENT PROGRAM — TROUBLESHOOTING GOVERNANCE</h3>
+              <p class="tagline">Global · Monthly SME Governance Cadence</p>
+              <p class="impact-line">
+                <span class="impact-label">🎯 Impact</span>
+                  Reduced duplicated work by 30%, with 5 Madrid-built solutions adopted globally and 15% faster resolution on complex cases.
+              </p>
+              <p class="project-summary">
+                Built a recurring knowledge-sharing and governance cadence for SMEs across regions to align troubleshooting standards.
+              </p>
+              <div class="project-details">
+                <p><strong>Role:</strong> Designed meeting structure, agendas and cadence; presented complex cases, policy updates and tooling issues; captured decisions and action items; and advocated for Madrid’s perspective while integrating insights from other regions.</p>
+                <p><strong>Scope:</strong> Monthly global sync involving SMEs from Madrid, Chennai, Costa Rica and Japan, covering all troubleshooting workflows.</p>
+                <p><strong>Impact:</strong> Reduced duplicated work by 30% through systematic reuse of solutions, enabled 5 Madrid-developed solutions to be adopted globally, decreased resolution time for complex cases by 15%, and strengthened global troubleshooting standards while elevating Madrid’s visibility.</p>
               </div>
             </article>
 
-            <!-- 4. QA & Calibration Model for Troubleshooting -->
-            <article class="project-card cat-data reveal">
-              <div class="project-card-inner">
-                <p class="project-category-label">
-                  <span><span class="cat-icon">🧪</span> QUALITY &amp; CALIBRATION</span>
-                  <span>Prime Video · QA</span>
-                </p>
-                <h3 class="project-title">QA &amp; Calibration Model for Troubleshooting</h3>
-                <p class="project-meta">
-                  <strong>Role:</strong> QA designer &amp; facilitator · <strong>Scope:</strong> Global troubleshooting workflows.
-                </p>
-                <p class="project-impact">
-                  <strong>Impact:</strong> Co-designed and rolled out a <strong>QA and calibration framework</strong> for troubleshooting operations, aligning expectations across regions and SMEs. Helped reduce variability in how complex cases were handled and created shared benchmarks for quality.
-                </p>
-                <p class="project-details">
-                  <strong>What I did:</strong> Helped define error taxonomies, QA rubrics and calibration sessions so that teams could review cases with a common criteria. Facilitated sessions, gathered feedback and iterated on the model to make it usable and relevant for day-to-day operations.
-                </p>
-                <div class="project-tags">
-                  <span class="project-tag data">QA model</span>
-                  <span class="project-tag training">Calibration sessions</span>
-                  <span class="project-tag ops">Error taxonomy</span>
-                </div>
-                <div class="project-link-row">
-                  <span class="project-scope">Global · QA &amp; Operations</span>
-                  <span>Troubleshooting workflows</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- 5. Learning Ambassador & Training Programs -->
-            <article class="project-card cat-training reveal">
-              <div class="project-card-inner">
-                <p class="project-category-label">
-                  <span><span class="cat-icon">🎓</span> TRAINING &amp; CHANGE ENABLEMENT</span>
-                  <span>Prime Video · L&amp;D</span>
-                </p>
-                <h3 class="project-title">Learning Ambassador &amp; Cross-Site Training Programs</h3>
-                <p class="project-meta">
-                  <strong>Role:</strong> Global Learning Ambassador (Madrid site) · <strong>Scope:</strong> Onboarding, cross-cultural collaboration &amp; new process rollouts.
-                </p>
-                <p class="project-impact">
-                  <strong>Impact:</strong> Designed and delivered <strong>training programs and workshops</strong> to help teams adopt new workflows, tools and ways of working. Improved cross-site understanding, particularly between Madrid and other global hubs.
-                </p>
-                <p class="project-details">
-                  <strong>What I did:</strong> Created training content, ran workshops and acted as a point of contact for new joiners and cross-regional initiatives. Used feedback from teams to refine SOPs, materials and onboarding journeys so that documentation matched reality.
-                </p>
-                <div class="project-tags">
-                  <span class="project-tag training">Workshops</span>
-                  <span class="project-tag training">Onboarding</span>
-                  <span class="project-tag ops">Change management</span>
-                </div>
-                <div class="project-link-row">
-                  <span class="project-scope">Madrid · Global</span>
-                  <span>L&amp;D · Cross-site enablement</span>
-                </div>
+            <!-- 3. Metadata Accuracy & Backlog Reduction Initiative -->
+            <article class="project-card top-project cat-data reveal">
+              <p class="project-category-label">
+                <span class="cat-icon">📊</span>
+                DATA MANAGEMENT &amp; QUALITY
+              </p>
+              <span class="top-badge">TOP PROJECT</span>
+              <h3>METADATA ACCURACY &amp; BACKLOG REDUCTION INITIATIVE</h3>
+              <p class="tagline">Multi-Site Pilot · Internal Support Metadata</p>
+              <p class="impact-line">
+                <span class="impact-label">🎯 Impact</span>
+                  Projected &gt;80% reduction in inactive metadata tickets, 95% validation accuracy and &lt;15 minute processing times.
+              </p>
+              <p class="project-summary">
+                Pilot project to validate and correct key metadata fields and eliminate bottlenecks in the metadata backlog.
+              </p>
+              <div class="project-details">
+                <p><strong>Role:</strong> Proposed the pilot and defined scope, designated IMDb as the source of truth, created documentation requirements (case ID, title ID, before/after snapshots) and established a multi-site implementation plan and success metrics.</p>
+                <p><strong>Scope:</strong> Multi-site pilot across Madrid, Japan, Chennai and San José focusing on internal support, with a model scalable to additional metadata fields.</p>
+                <p><strong>Impact:</strong> Projected to reduce inactive metadata tickets by more than 80%, aimed for 95% validation accuracy and processing times under 15 minutes, established a permanent validation process and reduced dependency on partner-provided data.</p>
               </div>
             </article>
           </div>
         </div>
       </aside>
     </section>
+
+    <div class="section-divider"></div>
 
     <!-- MORE PROJECTS -->
-    <section id="more-projects" class="projects-section">
-      <aside class="module more-projects-module reveal">
-        <div class="projects-module-inner">
-          <p class="more-projects-heading">MORE PROJECTS</p>
+    <section id="more-projects" class="reveal">
+      <p class="section-heading">MORE PROJECTS</p>
 
-          <div class="more-projects-grid">
-            <div>
-              <ul class="more-projects-list">
-                <li>
-                  <strong>Content delivery &amp; scheduling for multi-channel TV networks</strong> – Managed operational workflows and content deliveries for <strong>Fox Networks, National Geographic and Disney channels</strong>, ensuring on-time and accurate programming across multiple regions.
-                </li>
-                <li>
-                  <strong>Operational support for streaming launches</strong> – Involved in operations and content readiness for <strong>Paramount+</strong> and <strong>DAZN</strong> in the Spanish market, aligning internal teams and partners around launch timelines and content requirements.
-                </li>
-                <li>
-                  <strong>Cross-team coordination in high-pressure environments</strong> – Acted as a connector between editorial, tech and operations teams to resolve content and scheduling issues with tight deadlines.
-                </li>
-              </ul>
-            </div>
-
-            <div class="key-metrics-card">
-              <p class="key-metrics-title">KEY METRICS &amp; STRENGTHS</p>
-              <div class="key-metrics-row">
-                <div class="key-metric-item">
-                  <p class="key-metric-label">Troubleshooting &amp; workflows</p>
-                  <p class="key-metric-value">Global scope</p>
-                  <p class="key-metric-caption">
-                    Designed and supported multi-region workflows, QA and communication models across 3+ troubleshooting teams.
-                  </p>
-                </div>
-                <div class="key-metric-item">
-                  <p class="key-metric-label">Cross-regional collaboration</p>
-                  <p class="key-metric-value">4+ sites</p>
-                  <p class="key-metric-caption">
-                    Coordinated Madrid, Tokyo, Chennai and Costa Rica teams around shared processes, tools and expectations.
-                  </p>
-                </div>
-                <div class="key-metric-item">
-                  <p class="key-metric-label">Documentation &amp; SOPs</p>
-                  <p class="key-metric-value">Policy 2.0</p>
-                  <p class="key-metric-caption">
-                    Contributed to SOP governance and migration, ensuring clarity, ownership and alignment with real workflows.
-                  </p>
-                </div>
-                <div class="key-metric-item">
-                  <p class="key-metric-label">Training &amp; enablement</p>
-                  <p class="key-metric-value">Global L&amp;D</p>
-                  <p class="key-metric-caption">
-                    As Learning Ambassador, designed and facilitated workshops to support new workflows and cross-cultural collaboration.
-                  </p>
-                </div>
-              </div>
-            </div>
+      <div class="project-grid-more">
+        <!-- 4. Error Taxonomy Redesign for Data-Driven Troubleshooting -->
+        <article class="project-card secondary-project cat-data reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">📊</span>
+            DATA &amp; ANALYTICS
+          </p>
+          <h3>ERROR TAXONOMY REDESIGN FOR DATA-DRIVEN TROUBLESHOOTING</h3>
+          <p class="tagline">All Troubleshooting Workflows</p>
+          <p class="impact-line">
+            <span class="impact-label">Impact</span>
+            <span class="impact-metrics">
+              Enabled precise RCA and comprehensive dashboards by replacing vague categories and reducing “Other” usage.
+            </span>
+          </p>
+          <p class="project-summary">
+            Created a granular, actionable categorisation system for troubleshooting tickets to unlock better analytics.
+          </p>
+          <div class="project-details">
+            <p><strong>Role:</strong> Reviewed legacy taxonomy and SOPs, designed new categories grouped by workflow stage, failure type and troubleshooting stage, advocated for consistent implementation across tagging and allocation systems and defined how to introduce new categories when required.</p>
+            <p><strong>Scope:</strong> All troubleshooting workflows, integrated with reporting tools across the organisation.</p>
+            <p><strong>Impact:</strong> Enabled precise root-cause analysis and more reliable dashboards, reduced reliance on generic “Other” buckets, shortened resolution times and reduced repeat issues while giving program managers actionable data for prioritising structural fixes.</p>
           </div>
+        </article>
 
-          <div style="margin-top: 12px; text-align: center; font-size: 11px; color: var(--text-soft);">
-            Full project descriptions &amp; case details available in my project portfolio (PDF) or on request.
+        <!-- 5. Unified Quality Assurance Standards after System Migration -->
+        <article class="project-card secondary-project cat-quality reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">⭐</span>
+            QUALITY ASSURANCE
+          </p>
+          <h3>UNIFIED QUALITY ASSURANCE STANDARDS AFTER SYSTEM MIGRATION</h3>
+          <p class="tagline">Global · Post-Migration QA Alignment</p>
+          <p class="impact-line">
+            <span class="impact-label">Impact</span>
+            <span class="impact-metrics">
+              Consolidated 3 QA matrices into one framework and improved training consistency across workflows.
+            </span>
+          </p>
+          <p class="project-summary">
+            Aligned QA guidelines across regions following the migration to a new system and tooling stack.
+          </p>
+          <div class="project-details">
+            <p><strong>Role:</strong> Analysed existing QA guidelines, identified gaps, created unified documentation incorporating best practices and coordinated with stakeholders and policy teams to align expectations.</p>
+            <p><strong>Scope:</strong> Global initiative spanning redelivery, partner support and internal support after migration to SharePoint 365 and associated tools.</p>
+            <p><strong>Impact:</strong> Consolidated three different QA matrices into a single framework, ensured more consistent evaluation and expectations across regions and workflows, improved training and onboarding for new auditors and associates, and reinforced cross-site collaboration.</p>
           </div>
+        </article>
+
+        <!-- 6. Trust & Safety Ticketing Workflow Rebuild -->
+        <article class="project-card secondary-project cat-workflow reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">🛡</span>
+            PROCESS OPTIMIZATION &amp; GOVERNANCE
+          </p>
+          <h3>TRUST &amp; SAFETY TICKETING WORKFLOW REBUILD</h3>
+          <p class="tagline">Trust &amp; Safety · Unmanaged Content Flow</p>
+          <p class="impact-line">
+            <span class="impact-label">Impact</span>
+            <span class="impact-metrics">
+              Reduced backlog and ambiguity with clear CTI paths, reference examples and 8 standardised issue types.
+            </span>
+          </p>
+          <p class="project-summary">
+            Clarified routing and resolution paths for unmanaged content tickets in Trust &amp; Safety.
+          </p>
+          <div class="project-details">
+            <p><strong>Role:</strong> Partnered with the unmanaged content manager and product manager, organised process review meetings, created comprehensive CTI path lists and reference tables and updated SOPs with approved routing and blurbs.</p>
+            <p><strong>Scope:</strong> Internal Support team handling Trust &amp; Safety (PVD) tickets, in collaboration with T&amp;S and Program Management.</p>
+            <p><strong>Impact:</strong> Reduced ticket backlog and processing ambiguities, provided clear CTI routes and standardised responses for eight key issue types and established a sustainable, governed workflow for unmanaged content.</p>
+          </div>
+        </article>
+
+        <!-- 7. TVOD Global Account Management Tracker -->
+        <article class="project-card secondary-project cat-ops reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">🧭</span>
+            OPERATIONAL ENABLEMENT &amp; TOOLS
+          </p>
+          <h3>TVOD GLOBAL ACCOUNT MANAGEMENT TRACKER</h3>
+          <p class="tagline">TVOD · Global Spoofing Autonomy</p>
+          <p class="impact-line">
+            <span class="impact-label">Impact</span>
+            <span class="impact-metrics">
+              Eliminated dependency on San José and 24-hour delays, enabling continuous storefront spoofing.
+            </span>
+          </p>
+          <p class="project-summary">
+            Created autonomy for content spoofing and account management via a structured TVOD tracker.
+          </p>
+          <div class="project-details">
+            <p><strong>Role:</strong> Secured access and credits with the Chennai team, designed a comprehensive tracker for Digiflex teams, established a structured workflow and agile request flow and documented the process while training users.</p>
+            <p><strong>Scope:</strong> Digiflex global teams across sites, using the tracker to manage TVOD accounts and spoof content across global storefronts.</p>
+            <p><strong>Impact:</strong> Removed reliance on the San José site and 24-hour wait times, improved prioritisation and visibility of accounts, and enabled more agile, continuous operational support.</p>
+          </div>
+        </article>
+
+        <!-- 8. Partner Support Redelivery Integration -->
+        <article class="project-card secondary-project cat-partner reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">🤝</span>
+            WORKFLOW MIGRATION &amp; TRAINING
+          </p>
+          <h3>PARTNER SUPPORT REDELIVERY INTEGRATION</h3>
+          <p class="tagline">Partner Support · Redelivery Workflow</p>
+          <p class="impact-line">
+            <span class="impact-label">Impact</span>
+            <span class="impact-metrics">
+              Enabled Partner Support to absorb ~20% extra case inflow while freeing Redelivery for core tasks.
+            </span>
+          </p>
+          <p class="project-summary">
+            Onboarded Partner Support to handle redelivery cases seamlessly and on schedule.
+          </p>
+          <div class="project-details">
+            <p><strong>Role:</strong> Reviewed case types and procedural gaps, provided feedback to program managers, aligned and standardised SOPs, supported onboarding and training and monitored the go-live period.</p>
+            <p><strong>Scope:</strong> Migration of the Paragon redelivery workflow into Partner Support across regions, involving SMEs, program managers and associates.</p>
+            <p><strong>Impact:</strong> Completed integration on schedule, allowed Partner Support to absorb around 20% more cases without disrupting service, freed Redelivery associates to focus on core tasks and reinforced Madrid’s leadership role through aligned SOPs and documentation.</p>
+          </div>
+        </article>
+
+        <!-- 9. QA Calibration Refresh — Aligning Troubleshooting Quality Standards -->
+        <article class="project-card secondary-project cat-quality reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">⭐</span>
+            QUALITY ASSURANCE &amp; CONTINUOUS IMPROVEMENT
+          </p>
+          <h3>QA CALIBRATION REFRESH — ALIGNING TROUBLESHOOTING QUALITY STANDARDS</h3>
+          <p class="tagline">Global Troubleshooting · Calibration Framework</p>
+          <p class="impact-line">
+            <span class="impact-label">Impact</span>
+            <span class="impact-metrics">
+              Improved QA scoring consistency, trust and linkage between QA findings and real process gaps.
+            </span>
+          </p>
+          <p class="project-summary">
+            Recalibrated scoring expectations for complex troubleshooting cases through structured calibration rounds.
+          </p>
+          <div class="project-details">
+            <p><strong>Role:</strong> Identified ambiguities in existing criteria, curated representative tickets, designed a calibration pack, facilitated sessions between SMEs and auditors and documented outcomes, updating SOPs and QA forms.</p>
+            <p><strong>Scope:</strong> Multi-site and multi-workflow troubleshooting, engaging SMEs and QA teams globally.</p>
+            <p><strong>Impact:</strong> Improved consistency of QA scoring, increased associate trust, created a repeatable calibration framework and ensured QA outcomes were tied to actual process improvements and training updates.</p>
+          </div>
+        </article>
+
+        <!-- 10. Multi-Workflow Troubleshooting SME Ownership -->
+        <article class="project-card secondary-project cat-people reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">👤</span>
+            SUBJECT MATTER EXPERTISE &amp; LEADERSHIP
+          </p>
+          <h3>MULTI-WORKFLOW TROUBLESHOOTING SME OWNERSHIP</h3>
+          <p class="tagline">Ticketing · Partner Support · Redelivery</p>
+          <p class="impact-line">
+            <span class="impact-label">Impact</span>
+            <span class="impact-metrics">
+              Increased resolution consistency and reduced ownership confusion across 3 workflows.
+            </span>
+          </p>
+          <p class="project-summary">
+            Acted as central reference across Ticketing, Partner Support and Redelivery, codifying edge cases into SOPs.
+          </p>
+          <div class="project-details">
+            <p><strong>Role:</strong> Accepted SME mandate across three workflows, created and refined SOPs, job aids and taxonomies, provided backup for managers, unblocked complex cases through working sessions and escalated structural issues to program managers with data.</p>
+            <p><strong>Scope:</strong> Cross-workflow leadership spanning multiple teams and geographies focused on root cause analysis, decision clarity and process consistency.</p>
+            <p><strong>Impact:</strong> Improved resolution consistency, reduced confusion over ownership, strengthened trust between Madrid and other sites and shifted troubleshooting from reactive responses to structured, documented patterns.</p>
+          </div>
+        </article>
+
+        <!-- 11. Kamino 2.0 Practical Troubleshooting Guide -->
+        <article class="project-card secondary-project cat-ops reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">🛠</span>
+            TOOL ENABLEMENT &amp; DOCUMENTATION
+          </p>
+          <h3>KAMINO 2.0 PRACTICAL TROUBLESHOOTING GUIDE</h3>
+          <p class="tagline">Tooling · Practical Enablement</p>
+          <p class="impact-line">
+            <span class="impact-label">Impact</span>
+            <span class="impact-metrics">
+              Shortened learning curve, reduced ad-hoc tool questions and improved consistency of actions in Kamino 2.0.
+            </span>
+          </p>
+          <p class="project-summary">
+            Simplified complex tool usage through an actionable, scenario-based guide for Kamino 2.0.
+          </p>
+          <div class="project-details">
+            <p><strong>Role:</strong> Mapped end-to-end troubleshooting journeys, translated technical behaviours into step-by-step instructions tied to ticket types, aligned the guide with policy and SOPs and incorporated feedback from live usage.</p>
+            <p><strong>Scope:</strong> Cross-site usage of Kamino 2.0 for content mismatches, availability issues and asset/version problems.</p>
+            <p><strong>Impact:</strong> Reduced confusion and shortened ramp-up time for associates, decreased ad hoc questions to SMEs and improved the quality and consistency of actions taken in Kamino 2.0.</p>
+          </div>
+        </article>
+
+        <!-- 12. Amazon Kids Content Workflow Standardisation -->
+        <article class="project-card secondary-project cat-workflow reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">🎯</span>
+            TICKET ROUTING &amp; POLICY CLARIFICATION
+          </p>
+          <h3>AMAZON KIDS CONTENT WORKFLOW STANDARDISATION</h3>
+          <p class="tagline">Amazon Kids · Routing &amp; Policy</p>
+          <p class="impact-line">
+            <span class="impact-label">Impact</span>
+            <span class="impact-metrics">
+              Eliminated misrouting, improved resolution times and achieved a 3.8/5 performance score for the new process.
+            </span>
+          </p>
+          <p class="project-summary">
+            Defined responsibilities and routing for Amazon Kids content issues with clear CTIs and edge-case handling.
+          </p>
+          <div class="project-details">
+            <p><strong>Role:</strong> Researched team responsibilities, defined clear scope boundaries between A4K and internal support, created detailed CTI paths and edge-case guidelines and documented a complete SOP.</p>
+            <p><strong>Scope:</strong> Internal support global team and Amazon Kids (Kids and Family), covering storefront availability, offers, asset-related issues and more.</p>
+            <p><strong>Impact:</strong> Eliminated ambiguity and misrouting, improved resolution times, ensured consistent handling of asset versus availability issues and received a 3.8/5 performance score for the new workflow.</p>
+          </div>
+        </article>
+
+        <!-- 13. Optimising Workload Allocation for Troubleshooting Tasks -->
+        <article class="project-card secondary-project cat-ops reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">📌</span>
+            STRATEGIC RESOURCE PLANNING
+          </p>
+          <h3>OPTIMISING WORKLOAD ALLOCATION FOR TROUBLESHOOTING TASKS</h3>
+          <p class="tagline">ATM · Complexity-Based Allocation</p>
+          <p class="impact-line">
+            <span class="impact-label">Impact</span>
+            <span class="impact-metrics">
+              Supported the case that Madrid is irreplaceable for high-complexity cases and improved utilisation of expert capacity.
+            </span>
+          </p>
+          <p class="project-summary">
+            Proposed a complexity-based allocation model to balance capacity and expertise across troubleshooting tasks.
+          </p>
+          <div class="project-details">
+            <p><strong>Role:</strong> Analysed current allocation patterns and utilisation, identified mismatches, drafted a proposal with recommendations based on complexity levels, regional strengths and workflow maturity and presented findings to leadership.</p>
+            <p><strong>Scope:</strong> Internal support workflow across multiple sites and teams, focused on aligning ticket complexity with the right expertise.</p>
+            <p><strong>Impact:</strong> Supported the narrative that Madrid is critical for high-complexity cases, improved utilisation by better matching work to skills and opened the door to more intentional, strategy-led resource allocation.</p>
+          </div>
+        </article>
+
+        <!-- 14. Standardising Quality Assurance Across Multi-Site Troubleshooting -->
+        <article class="project-card secondary-project cat-quality reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">📏</span>
+            QUALITY ASSURANCE &amp; CALIBRATION
+          </p>
+          <h3>STANDARDISING QUALITY ASSURANCE ACROSS MULTI-SITE TROUBLESHOOTING</h3>
+          <p class="tagline">Global · Multi-Site QA</p>
+          <p class="impact-line">
+            <span class="impact-label">Impact</span>
+            <span class="impact-metrics">
+              Increased alignment on what high-quality troubleshooting looks like and ensured QA drives real improvements.
+            </span>
+          </p>
+          <p class="project-summary">
+            Aligned QA scoring and expectations across sites while ensuring QA outputs informed process changes.
+          </p>
+          <div class="project-details">
+            <p><strong>Role:</strong> Participated in calibration sessions, supported “Audit the Auditor” initiatives, helped shape and interpret QA forms and scorecards and integrated calibration outcomes into SOPs and training.</p>
+            <p><strong>Scope:</strong> Multi-site teams and SMEs involved in troubleshooting across partner support, redelivery and ticketing.</p>
+            <p><strong>Impact:</strong> Increased alignment on what good troubleshooting looks like, improved the perception of fairness, ensured QA results informed real process changes and created a sustainable framework for maintaining consistent quality standards as the organisation scales.</p>
+          </div>
+        </article>
+
+        <!-- 15. Partner Support Carousels Workflow Integration -->
+        <article class="project-card secondary-project cat-partner reveal">
+          <p class="project-category-label">
+            <span class="cat-icon">🧩</span>
+            WORKFLOW INTEGRATION &amp; TRAINING
+          </p>
+          <h3>PARTNER SUPPORT CAROUSELS WORKFLOW INTEGRATION</h3>
+          <p class="tagline">Partner Support · Merchandising Carousels</p>
+          <p class="impact-line">
+            <span class="impact-label">Impact</span>
+            <span class="impact-metrics">
+              Eliminated cross-team routing and absorbed ~5% extra weekly ticket inflow without sacrificing quality.
+            </span>
+          </p>
+          <p class="project-summary">
+            Enabled Partner Support to own merchandising Carousels cases end-to-end with clear flows and training.
+          </p>
+          <div class="project-details">
+            <p><strong>Role:</strong> Participated in feedback sessions, reviewed SOP and training materials, provided targeted feedback on edge cases, created quick references, supported associates during Shadow Week and monitored global implementation.</p>
+            <p><strong>Scope:</strong> Partner Support teams across multiple regions handling the Carousels merchandising workflow.</p>
+            <p><strong>Impact:</strong> Eliminated unnecessary cross-team routing, accelerated case resolution, allowed Partner Support to handle approximately 5% more tickets per week without quality loss and established a scalable model for future workflow integrations.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+<!-- SKILLS & TOOLS -->
+<section id="skills" class="skills-section reveal">
+  <p class="section-heading">SKILLS &amp; TOOLS</p>
+
+  <aside class="module skills-module">
+    <div class="skills-module-inner">
+      <!-- CORE SKILLS -->
+      <p class="skills-block-title">
+        <span class="skills-icon">⭐</span> CORE SKILLS
+      </p>
+      <p class="skills-text small">
+        Program &amp; project management · Operational excellence &amp; continuous improvement · 
+        Workflow &amp; process design · Cross-regional stakeholder alignment · Troubleshooting strategy · 
+        QA &amp; calibration · SOP &amp; documentation ownership · Coaching, training &amp; change enablement
+      </p>
+      <div class="skill-tags">
+        <span class="skill-tag">Program &amp; project delivery</span>
+        <span class="skill-tag">Operational strategy</span>
+        <span class="skill-tag">Workflow architecture</span>
+        <span class="skill-tag">Root-cause analysis</span>
+        <span class="skill-tag">Global stakeholder alignment</span>
+        <span class="skill-tag">SOP &amp; policy governance</span>
+        <span class="skill-tag">QA &amp; calibration</span>
+        <span class="skill-tag">Coaching &amp; enablement</span>
+      </div>
+
+      <!-- DOMAINS -->
+      <p class="skills-block-title">
+        <span class="skills-icon">🌐</span> DOMAINS
+      </p>
+      <p class="skills-text small">
+        Streaming &amp; OTT operations · Digital content supply chain · Metadata &amp; catalog management · 
+        Partner support &amp; redelivery · Trust &amp; Safety &amp; compliance workflows · 
+        Quality &amp; audit systems for troubleshooting
+      </p>
+      <div class="skill-tags">
+        <span class="skill-tag">Streaming &amp; OTT</span>
+        <span class="skill-tag">Digital media operations</span>
+        <span class="skill-tag">Metadata &amp; catalog</span>
+        <span class="skill-tag">Partner &amp; vendor workflows</span>
+        <span class="skill-tag">Troubleshooting &amp; escalation</span>
+        <span class="skill-tag">QA &amp; audit programs</span>
+        <span class="skill-tag">Launch &amp; change management</span>
+      </div>
+
+      <!-- TOOLS -->
+      <p class="skills-block-title">
+        <span class="skills-icon">🛠</span> TOOLS
+      </p>
+      <p class="skills-text small">
+        Excel (advanced) · Airtable · Jira · Salesforce · Asana · Slack workflows · 
+        SharePoint / Office 365 · AI-assisted documentation &amp; analysis (ChatGPT)
+      </p>
+      <div class="skill-tags">
+        <span class="skill-tag">Advanced Excel</span>
+        <span class="skill-tag">Airtable</span>
+        <span class="skill-tag">Jira</span>
+        <span class="skill-tag">Salesforce</span>
+        <span class="skill-tag">Asana</span>
+        <span class="skill-tag">SharePoint &amp; 365</span>
+        <span class="skill-tag">Slack workflows</span>
+        <span class="skill-tag">AI-assisted documentation</span>
+      </div>
+    </div>
+  </aside>
+</section>
+
+
+    <div class="section-divider"></div>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section reveal">
+      <aside class="module contact-module">
+        <p class="contact-title">LET’S WORK TOGETHER</p>
+        <p class="contact-text">
+          If you’re looking for a project &amp; operations lead to strengthen streaming workflows, QA systems or global troubleshooting,
+          I’d be happy to connect.
+        </p>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:jeanpaulangulo@gmail.com">
+            ✉️ <span>Email</span>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/jeanpaulangulo/" target="_blank">
+            💼 <span>LinkedIn</span>
+          </a>
+          <a class="contact-link" href="docs/Portfolio_Projects_JeanPaul_Angulo.pdf" target="_blank">
+            📄 <span>Portfolio (PDF)</span>
+          </a>
         </div>
       </aside>
     </section>
-
-    <!-- SKILLS & TOOLS -->
-    <section id="skills" class="skills-section">
-      <aside class="module reveal">
-        <p class="section-heading">SKILLS &amp; TOOLS</p>
-        <div class="skills-content">
-          <div>
-            <p class="skills-column-title">Operational &amp; Project Skills</p>
-            <ul class="skills-list">
-              <li><strong>Operations &amp; workflows:</strong> Troubleshooting flows, escalation paths, SLAs, cross-team coordination</li>
-              <li><strong>Project management:</strong> Scoping, stakeholder alignment, execution tracking, retros &amp; continuous improvement</li>
-              <li><strong>Documentation &amp; SOPs:</strong> SOP writing, governance, Policy 2.0 alignment, playbooks &amp; runbooks</li>
-              <li><strong>Quality &amp; training:</strong> QA frameworks, calibration sessions, onboarding, global workshops</li>
-            </ul>
-          </div>
-          <div>
-            <p class="skills-column-title">Tools &amp; Systems</p>
-            <div class="skills-pill-row">
-              <span class="skills-pill">Jira &amp; ticketing systems</span>
-              <span class="skills-pill">Confluence &amp; knowledge bases</span>
-              <span class="skills-pill">SharePoint / internal wikis</span>
-              <span class="skills-pill">Excel / Sheets (ops tracking)</span>
-              <span class="skills-pill">AI tools for documentation &amp; analysis</span>
-              <span class="skills-pill">Collaboration: Slack, Teams, Zoom</span>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </section>
-
-    <footer class="main-footer">
-      <span>© 2025 · Jean Paul Angulo</span>
-      <span>
-        Project portfolio ·
-        <a href="docs/Portfolio_Projects_JeanPaul_Angulo.pdf" target="_blank" rel="noopener noreferrer">
-          Download PDF
-        </a>
-      </span>
-    </footer>
   </main>
 
+  <footer class="footer">
+    © 2025 — Designed &amp; built by Jean Paul Angulo
+  </footer>
+
   <script>
-    const revealElements = document.querySelectorAll(".reveal");
+    // Scroll reveal for elements with .reveal
+    const revealEls = document.querySelectorAll('.reveal');
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-      }
-    );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-visible');
 
-    revealElements.forEach((el) => observer.observe(el));
+          // Añadimos animación del subrayado a los headings de sección
+          const heading = entry.target.querySelector('.section-heading');
+          if (heading) heading.classList.add('heading-visible');
+
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    revealEls.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
