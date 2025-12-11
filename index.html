@@ -841,12 +841,30 @@ body {
         background 0.25s ease-out;
     }
 
-    .module:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.10);
-      border-color: #d6e2ff;
-      background: #fcfdff;
-    }
+    /* Hover por defecto en módulos (menos el de Key Projects) */
+.module:not(.projects-module):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+  border-color: #d6e2ff;
+  background: #fcfdff;
+}
+
+/* Contenedor de KEY PROJECTS: sin saltos verticales, solo sombra suave */
+.projects-module {
+  transition:
+    box-shadow 0.28s ease-out,
+    border-color 0.28s ease-out,
+    background 0.28s ease-out;
+  will-change: box-shadow, border-color, background;
+}
+
+.projects-module:hover {
+  transform: none; /* anula cualquier translateY heredado */
+  box-shadow: 0 16px 34px rgba(0,0,0,0.08);
+  border-color: #d6e2ff;
+  background: #fcfdff;
+}
+
 
     .projects-module {
       margin-bottom: 36px;
