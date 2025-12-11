@@ -251,16 +251,21 @@ body {
 
 /* Imagen principal (más grande) */
 .hero-avatar img {
-  width: 150px;   /* antes 132 */
-  height: 150px;  /* antes 132 */
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   position: relative;
   z-index: 1;
-  border: 2px solid rgba(255, 255, 255, 0.6);
+
+  /* Marco más fino, menos intrusivo */
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  /* Sombra más suave y más realista */
   box-shadow:
-    0 14px 32px rgba(15, 23, 42, 0.28),
-    0 0 0 1px rgba(210, 220, 255, 0.9);
+    0 10px 24px rgba(15, 23, 42, 0.22),
+    0 0 0 1px rgba(220, 230, 255, 0.65);
+
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
